@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://cycw65e7qjy1m"]
+
+[ext_resource type="Texture2D" uid="uid://br76lfsw3f82o" path="res://assets/bg2.jpg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="1_ig7tw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(103.367, 164.8)
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(714, 454)
+texture = ExtResource("1_0xm2m")
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(-47, 338)
+acceleration = 0.505
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(746.088, 47.8353)
+scale = Vector2(0.283206, -8.9227)
+zoom = Vector2(1.5, 1.5)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-287, 712)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(906, -2)
+shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-8, -812)
+scale = Vector2(1.04142, 2.18965)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(840.305, 616.685)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = 791.0
+offset_top = 535.0
+offset_right = 801.0
+offset_bottom = 557.0
+scale = Vector2(10.6606, 7.38736)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-291, -667)
+scale = Vector2(1.04142, 2.18965)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(840.305, 616.685)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+offset_left = 791.0
+offset_top = 535.0
+offset_right = 801.0
+offset_bottom = 548.0
+scale = Vector2(10.6606, 7.38736)

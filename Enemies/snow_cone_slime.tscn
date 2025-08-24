@@ -203,7 +203,7 @@ target_position = Vector2(-30, 0)
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["snow_cone_slime"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(651, 396)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cycw65e7qjy1m"]
 
-[ext_resource type="Texture2D" uid="uid://br76lfsw3f82o" path="res://assets/bg2.jpg" id="1_0xm2m"]
+[ext_resource type="Texture2D" path="res://assets/bg2.jpg" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="1_ig7tw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
@@ -16,7 +16,18 @@ texture = ExtResource("1_0xm2m")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(-47, 338)
+walk_speed = null
+run_speed = null
+crouch_speed = null
+icy_acceleration = null
+stomp_bounce_force = null
+attack_cooldown = null
+invuln_time = null
 acceleration = 0.505
+deceleration = null
+jump_force = null
+decelerate_on_jump_release = null
+max_health = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(746.088, 47.8353)

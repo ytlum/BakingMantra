@@ -16,7 +16,7 @@ texture = ExtResource("1_0xm2m")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(-47, 338)
-acceleration = 0.505
+script = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(746.088, 47.8353)

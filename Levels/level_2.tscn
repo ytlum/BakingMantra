@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxljq01km86pd"]
+[gd_scene load_steps=12 format=3 uid="uid://bxljq01km86pd"]
 
 [ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="3_dgq3b"]
 [ext_resource type="PackedScene" uid="uid://cv6u7jsbypgfd" path="res://Items/cocoa.tscn" id="4_dgq3b"]
+[ext_resource type="Texture2D" uid="uid://bd1hkrkpsx11k" path="res://assets/level2/grass_props.png" id="5_bcgyv"]
+[ext_resource type="Texture2D" uid="uid://cg1yidv5m0bge" path="res://assets/level2/bigflowers_props.png" id="6_fbld2"]
+[ext_resource type="Texture2D" uid="uid://c6ffmrel6tq43" path="res://assets/level2/flowers_props.png" id="7_pml6m"]
+[ext_resource type="Texture2D" uid="uid://bwj0ubalckk26" path="res://assets/level2/door.png" id="8_vltsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -416,4 +420,29 @@ position = Vector2(189, -103)
 position = Vector2(271, 202)
 
 [node name="Cocoa2" parent="." instance=ExtResource("4_dgq3b")]
-position = Vector2(868, 286)
+position = Vector2(636, 195)
+
+[node name="GrassProps" type="Sprite2D" parent="."]
+position = Vector2(251.5, 514.75)
+scale = Vector2(2.8125, 3.4375)
+texture = ExtResource("5_bcgyv")
+
+[node name="GrassProps2" type="Sprite2D" parent="."]
+position = Vector2(20, 516)
+scale = Vector2(2.75, 3.375)
+texture = ExtResource("5_bcgyv")
+
+[node name="BigflowersProps" type="Sprite2D" parent="."]
+position = Vector2(311, 612)
+scale = Vector2(2.5625, 3)
+texture = ExtResource("6_fbld2")
+
+[node name="FlowersProps" type="Sprite2D" parent="."]
+position = Vector2(760, 565)
+scale = Vector2(2.875, 2.75)
+texture = ExtResource("7_pml6m")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(1252, 521)
+scale = Vector2(2.45833, 4.58333)
+texture = ExtResource("8_vltsr")

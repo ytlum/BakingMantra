@@ -186,5 +186,5 @@ script = ExtResource("6_ay5qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/FrostBerry2"]
 
-[node name="Player" parent="." groups=["player"] instance=ExtResource("13_7cdb2")]
+[node name="Player" parent="." instance=ExtResource("13_7cdb2")]
 position = Vector2(-342, 111)

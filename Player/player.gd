@@ -23,6 +23,7 @@ extends CharacterBody2D
 @export_range(0, 1) var decelerate_on_jump_release = 0.3
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var inventory = {}
 
 # --- Health System ---
 @export var max_health = 3
@@ -76,7 +77,6 @@ func _physics_process(delta):
 	
 	#Apply direction
 	var direction = Input.get_axis("ui_left", "ui_right")
-	var accel = icy_acceleration if is_slippery else acceleration
 	
 	# Handle movement
 	if direction:
@@ -108,6 +108,15 @@ func _physics_process(delta):
 	# Move the character
 	move_and_slide()
 
+func collect_item(item_name):
+	# Add item to inventory or increase count
+	if inventory.has(item_name):
+		inventory[item_name] += 1
+	else:
+		inventory[item_name] = 1
+	
+	print("Collected: ", item_name, " - Total: ", inventory[item_name])
+	
 # ========================
 # Attack Function
 # ========================

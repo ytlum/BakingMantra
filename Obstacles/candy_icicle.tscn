@@ -163,7 +163,7 @@ size = Vector2(176, 271)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6kew"]
 size = Vector2(11.25, 18.25)
 
-[node name="CandyIcicle" type="Area2D"]
+[node name="CandyIcicle" type="Area2D" groups=["candy_icicle"]]
 script = ExtResource("1_c41ev")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

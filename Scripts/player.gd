@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var hurtbox = $Hurtbox
 @onready var footbox = $Footbox
-@onready var attackhitbox = $AttackHitbox
+@onready var attackhitbox = $AttackHitbox/AttackboxShape
 
 @onready var invuln_timer = $InvulnTimer
 @onready var freeze_timer = $FreezeTimer
@@ -21,9 +21,11 @@ extends CharacterBody2D
 @export_range(0, 1) var deceleration = 0.1
 @export var jump_force = -600.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.3
+@export var hurt_stun_time := 0.4  # seconds player is stunned after hit
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var inventory = {}
+var is_hurt: bool = false
 
 # --- Health System ---
 @export var max_health = 3
@@ -45,6 +47,16 @@ var attacking = false
 func _physics_process(delta):
 	if not is_alive:
 		return # no movement if dead
+		
+	if is_hurt:
+		# Player flinches: can still fall, but no input
+		if not is_on_floor():
+			velocity.y += gravity * delta
+			move_and_slide()
+		return
+		
+	if animated_sprite.animation in ["Hurt", "Die"]:
+		return
 		
 	# Apply gravity
 	if not is_on_floor():
@@ -89,7 +101,9 @@ func _physics_process(delta):
 		_start_attack()
 		
 	#Handle animations
-	if not is_on_floor() and velocity.y < 0 and Input.is_action_pressed("ui_accept"):
+	if attacking:
+		pass # let _start_attack() handle animation, don't override here
+	elif not is_on_floor() and velocity.y < 0 and Input.is_action_pressed("ui_accept"):
 		animated_sprite.play("Jump")
 	elif not is_on_floor() and velocity.y > 0:
 		animated_sprite.play("Fall") 
@@ -123,28 +137,49 @@ func collect_item(item_name):
 func _start_attack():
 	attacking = true
 	attackhitbox.disabled = false
+	# Add the player_attack group to the hitbox
+	if not attackhitbox.is_in_group("player_attack"):
+		attackhitbox.add_to_group("player_attack")
 	animated_sprite.play("Attack")
 	attack_timer.start(attack_cooldown)
 	
 # ========================
 # Health Functions
 # ========================
+func ready():
+	health = max_health
+	
 func take_damage(amount: int = 1):
 	if invulnerable or not is_alive:
 		return
 
 	health -= amount
-	animated_sprite.play("Hurt")
-	invulnerable = true
-	invuln_timer.start(invuln_time)
 	print("Player health:", health)
 
-	if health <= 0:
+	if health > 0:
+		# Enter hurt state
+		is_hurt = true
+		invulnerable = true
+		invuln_timer.start(invuln_time)
+
+		velocity.x = 0  # stop moving instantly
+		animated_sprite.play("Hurt")
+
+		# Release stun after short delay
+		await get_tree().create_timer(hurt_stun_time).timeout
+		is_hurt = false
+
+		# Only reset if still alive
+		if is_alive:
+			animated_sprite.play("Idle")
+	else:
 		die()
 
+
 func die():
+	is_alive = false
 	animated_sprite.play("Die")
-	set_physics_process(false) # stop movement
+	set_physics_process(false)
 	print("Player died")
 
 # ========================
@@ -203,9 +238,9 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		
 	#---Level 3---
 	# Snow Cone Slimes (touch = hurt, stomp kills them)
-	elif area.is_in_group("snow_slime"):
+	elif area.is_in_group("snow_cone_slime"):
 		take_damage(1)
-		print("Hit by shard ice!")
+		print("Hit by snow cone slime!")
 
 	# Candy Icicles (crash down & freeze player)
 	elif area.is_in_group("candy_icicle"):

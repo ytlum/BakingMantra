@@ -39,7 +39,7 @@ texture = ExtResource("1_4t7ew")
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="SnowConeSlime" parent="Enemies" instance=ExtResource("1_absw3")]
-position = Vector2(-236, 149)
+position = Vector2(-247, 211)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 script = ExtResource("2_padch")

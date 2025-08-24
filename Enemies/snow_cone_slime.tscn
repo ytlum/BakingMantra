@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://cep6vhc3562xl"]
+[gd_scene load_steps=34 format=3 uid="uid://cep6vhc3562xl"]
 
 [ext_resource type="Script" uid="uid://dg4t4uqcd8qxr" path="res://Scripts/snow_cone_slime.gd" id="1_k8gs8"]
+[ext_resource type="PackedScene" uid="uid://mrllvy11vatp" path="res://Projectiles/snowball.tscn" id="2_wgsg7"]
 [ext_resource type="Texture2D" uid="uid://c5xkdwdvygljl" path="res://assets/level3/enemy/Attack.png" id="3_wgsg7"]
 [ext_resource type="Texture2D" uid="uid://cw7hgrlqoww1i" path="res://assets/level3/enemy/Death.png" id="4_6er5o"]
 [ext_resource type="Texture2D" uid="uid://glwrnyrtovnl" path="res://assets/level3/enemy/Get Hit.png" id="5_ebf2i"]
@@ -108,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3cfwn")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack",
 "speed": 4.0
 }, {
@@ -182,14 +183,26 @@ size = Vector2(13.25, 10.8)
 [sub_resource type="CircleShape2D" id="CircleShape2D_30bmd"]
 radius = 4.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30bmd"]
+size = Vector2(401, 286.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6er5o"]
+size = Vector2(69, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebf2i"]
+size = Vector2(66, 54)
+
 [node name="SnowConeSlime" type="CharacterBody2D"]
+collision_layer = 47
+collision_mask = 47
 script = ExtResource("1_k8gs8")
+snowball_scene = ExtResource("2_wgsg7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(650, 393)
 scale = Vector2(1, 1.251)
 sprite_frames = SubResource("SpriteFrames_npj7t")
-animation = &"walk"
+animation = &"get_hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(649.875, 394)
@@ -204,11 +217,38 @@ target_position = Vector2(-30, 0)
 wait_time = 3.0
 
 [node name="Hitbox" type="Area2D" parent="." groups=["snow_cone_slime"]]
+collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(651, 396)
 scale = Vector2(6, 6)
 shape = SubResource("CircleShape2D_30bmd")
 
+[node name="DetectionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+position = Vector2(651.5, 280.25)
+shape = SubResource("RectangleShape2D_30bmd")
+
+[node name="StompDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+position = Vector2(649.5, 363)
+shape = SubResource("RectangleShape2D_6er5o")
+
+[node name="AttackHitbox" type="Area2D" parent="."]
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
+position = Vector2(650, 394)
+shape = SubResource("RectangleShape2D_ebf2i")
+
+[node name="SnowballSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(219, 86)
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
+[connection signal="body_entered" from="StompDetector" to="." method="_on_stomp_detector_body_entered"]
+[connection signal="area_entered" from="AttackHitbox" to="." method="_on_attack_hitbox_area_entered"]

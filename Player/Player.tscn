@@ -406,7 +406,7 @@ size = Vector2(76.5714, 150.865)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0k0e"]
 size = Vector2(69.0822, 40.8765)
 
-[node name="Player" type="CharacterBody2D" groups=["sticky"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.651398, 0.543531)
 script = ExtResource("1_v0k0e")
 
@@ -426,7 +426,11 @@ frame_progress = 0.275495
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
+<<<<<<< HEAD
 position = Vector2(662.421, 262.174)
+=======
+position = Vector2(671.632, 262.174)
+>>>>>>> 16e1c9e (Added level 2 and cocoa collectibles)
 shape = SubResource("RectangleShape2D_j23h2")
 
 [node name="AttackHitbox" type="Area2D" parent="."]

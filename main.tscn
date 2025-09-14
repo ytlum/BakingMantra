@@ -1,65 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://cycw65e7qjy1m"]
+[gd_scene load_steps=11 format=3 uid="uid://byell8p2ekuwv"]
 
-[ext_resource type="Texture2D" uid="uid://br76lfsw3f82o" path="res://assets/background/bg2.jpg" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="1_ig7tw"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ig7tw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(103.367, 164.8)
+[ext_resource type="Script" uid="uid://d24nxfpv56xry" path="res://Scripts/main.gd" id="1_e5ruq"]
+[ext_resource type="Texture2D" uid="uid://cdc30q3viiel7" path="res://assets/UI/background.jpg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://m81rovohfuf1" path="res://Scripts/music_player.gd" id="2_fmhtc"]
+[ext_resource type="Texture2D" uid="uid://cux42ev2lk56r" path="res://assets/UI/TransitionEndBig.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://citrycud7abrk" path="res://Scripts/playbutton.gd" id="4_6sydh"]
+[ext_resource type="Texture2D" uid="uid://dlqknpxhf5gob" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Rect-Text-Play/Red-Idle.png" id="6_5vw27"]
+[ext_resource type="Script" uid="uid://ermtimymjdu1" path="res://Scripts/settings_icon.gd" id="6_eto42"]
+[ext_resource type="Texture2D" uid="uid://jgqtqg56spca" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Gear-Idle.png" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="8_4c57u"]
+[ext_resource type="Script" uid="uid://cxrbby0h30mkq" path="res://Scripts/pause.gd" id="8_dk31d"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_e5ruq")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(1225, 136)
+scale = Vector2(1.11842, 1)
+script = ExtResource("2_fmhtc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(714, 454)
-texture = ExtResource("1_0xm2m")
+position = Vector2(640.5, 318.75)
+scale = Vector2(1.25293, 1.01965)
+texture = ExtResource("1_ig7tw")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(-47, 338)
-acceleration = 0.505
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 644.0
+offset_top = 469.0
+offset_right = 711.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 25
+text = "Start"
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(746.088, 47.8353)
-scale = Vector2(0.283206, -8.9227)
-zoom = Vector2(1.5, 1.5)
-process_callback = 0
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+[node name="TransitionEndBig" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1227, 210)
+scale = Vector2(3.2, 3.075)
+texture = ExtResource("2_h2yge")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-287, 712)
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(906, -2)
-shape = SubResource("WorldBoundaryShape2D_ig7tw")
+[node name="playbutton" type="Sprite2D" parent="Node2D"]
+position = Vector2(660, 631)
+scale = Vector2(1.11842, 1)
+texture = ExtResource("6_5vw27")
+script = ExtResource("4_6sydh")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-8, -812)
-scale = Vector2(1.04142, 2.18965)
+[node name="setting" type="Sprite2D" parent="Node2D"]
+position = Vector2(1224, 50)
+scale = Vector2(1.11842, 1)
+texture = ExtResource("7_kek77")
+script = ExtResource("6_eto42")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(840.305, 616.685)
-shape = SubResource("RectangleShape2D_ig7tw")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
-offset_left = 791.0
-offset_top = 535.0
-offset_right = 801.0
-offset_bottom = 557.0
-scale = Vector2(10.6606, 7.38736)
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-291, -667)
-scale = Vector2(1.04142, 2.18965)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(840.305, 616.685)
-shape = SubResource("RectangleShape2D_ig7tw")
-
-[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
-offset_left = 791.0
-offset_top = 535.0
-offset_right = 801.0
-offset_bottom = 548.0
-scale = Vector2(10.6606, 7.38736)
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(1225, 136)
+scale = Vector2(1.11842, 1)
+texture = ExtResource("8_4c57u")
+script = ExtResource("8_dk31d")

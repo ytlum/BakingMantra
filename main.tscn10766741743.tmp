@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://byell8p2ekuwv"]
+
+[ext_resource type="Texture2D" uid="uid://cdc30q3viiel7" path="res://Assets/background.jpg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cux42ev2lk56r" path="res://Assets/TransitionEndBig.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://cxrbby0h30mkq" path="res://pause.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://ermtimymjdu1" path="res://settings_icon.gd" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://citrycud7abrk" path="res://playbutton.gd" id="5_5vw27"]
+[ext_resource type="Texture2D" uid="uid://dlqknpxhf5gob" path="res://Assets/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Rect-Text-Play/Red-Idle.png" id="6_5vw27"]
+[ext_resource type="Texture2D" uid="uid://jgqtqg56spca" path="res://Assets/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Gear-Idle.png" id="7_kek77"]
+[ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://Assets/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="8_4c57u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(169.882, 93)
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640.5, 318.75)
+scale = Vector2(1.25293, 1.01965)
+texture = ExtResource("1_ig7tw")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 644.0
+offset_top = 469.0
+offset_right = 711.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 25
+text = "Start"
+
+[node name="TransitionEndBig" type="Sprite2D" parent="."]
+position = Vector2(1227, 210)
+scale = Vector2(3.2, 3.075)
+texture = ExtResource("2_h2yge")
+script = ExtResource("3_1bvp3")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("5_5vw27")
+
+[node name="playbutton" type="Sprite2D" parent="Node2D"]
+position = Vector2(660, 631)
+scale = Vector2(1.11842, 1)
+texture = ExtResource("6_5vw27")
+script = ExtResource("5_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(656, 630)
+scale = Vector2(1.11842, 1)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="setting" type="Sprite2D" parent="Node2D"]
+position = Vector2(1224, 50)
+scale = Vector2(1.11842, 1)
+texture = ExtResource("7_kek77")
+script = ExtResource("3_7mycd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
+position = Vector2(1225, 136)
+scale = Vector2(1.11842, 1)
+texture = ExtResource("8_4c57u")
+script = ExtResource("3_7mycd")

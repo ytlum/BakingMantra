@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxljq01km86pd"]
+[gd_scene load_steps=14 format=3 uid="uid://bxljq01km86pd"]
 
 [ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cg1yidv5m0bge" path="res://assets/level2/bigflowers_props.png" id="6_fbld2"]
 [ext_resource type="Texture2D" uid="uid://c6ffmrel6tq43" path="res://assets/level2/flowers_props.png" id="7_pml6m"]
 [ext_resource type="Texture2D" uid="uid://bwj0ubalckk26" path="res://assets/level2/door.png" id="8_vltsr"]
+[ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="9_rp5ft"]
+[ext_resource type="Script" uid="uid://cxrbby0h30mkq" path="res://Scripts/pause.gd" id="10_qeqk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -446,3 +448,9 @@ texture = ExtResource("7_pml6m")
 position = Vector2(1252, 521)
 scale = Vector2(2.45833, 4.58333)
 texture = ExtResource("8_vltsr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1254, 42.9999)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("9_rp5ft")
+script = ExtResource("10_qeqk5")

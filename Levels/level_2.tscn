@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxljq01km86pd"]
+[gd_scene load_steps=11 format=3 uid="uid://bxljq01km86pd"]
 
 [ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
@@ -388,9 +388,6 @@ texture = ExtResource("2_arsda")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bcgyv")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_arsda"]
-size = Vector2(289.5, 187)
-
 [node name="Level2" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -409,9 +406,14 @@ layer_0/tile_data = PackedInt32Array(131072, 917504, 2, 196608, 917504, 3, 26214
 [node name="Player" parent="." instance=ExtResource("3_dgq3b")]
 position = Vector2(-290, 319)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(142.25, 622.5)
-shape = SubResource("RectangleShape2D_arsda")
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(746.088, 47.8353)
+scale = Vector2(0.283206, -8.9227)
+zoom = Vector2(1.5, 1.5)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="Cocoa" parent="." instance=ExtResource("4_dgq3b")]
 position = Vector2(189, -103)
@@ -446,3 +448,17 @@ texture = ExtResource("7_pml6m")
 position = Vector2(1252, 521)
 scale = Vector2(2.45833, 4.58333)
 texture = ExtResource("8_vltsr")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="ParallaxLayer"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/ParallaxBackground"]
+visible = false
+texture_repeat = 2
+position = Vector2(988, 44)
+scale = Vector2(762.908, 878)
+texture = ExtResource("1_kbe2v")
+region_enabled = true

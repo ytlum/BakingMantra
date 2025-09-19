@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var item_name: String = "coin"   # type of item (set per collectible in Inspector)
+@export var item_name: String = "ingredient"   # type of item (set per collectible in Inspector)
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))

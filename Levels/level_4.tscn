@@ -1506,3 +1506,4 @@ shape = SubResource("RectangleShape2D_y54eq")
 [connection signal="body_exited" from="Dropping platform/DetectionArea" to="Player" method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Dropping platform2/DetectionArea" to="Player" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Dropping platform2/DetectionArea" to="Player" method="_on_detection_area_body_exited"]
+

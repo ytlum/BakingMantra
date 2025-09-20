@@ -489,7 +489,6 @@ monitoring = false
 
 [node name="AttackboxShape" type="CollisionShape2D" parent="AttackHitbox"]
 position = Vector2(325.382, 869.315)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0j2ni")
 
 [node name="Footbox" type="Area2D" parent="."]

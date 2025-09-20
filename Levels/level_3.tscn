@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b7kvt1x4oltwp"]
+[gd_scene load_steps=24 format=3 uid="uid://b7kvt1x4oltwp"]
 
 [ext_resource type="Texture2D" uid="uid://jje0ail0ewrj" path="res://assets/level3/background/BG_01.png" id="1_4t7ew"]
 [ext_resource type="PackedScene" uid="uid://ckttdx1x26koy" path="res://Enemies/snow_cone_slime.tscn" id="1_absw3"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://vs54iw2q8n5j" path="res://assets/level3/background/snow_59.png" id="12_5wr1k"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="13_7cdb2"]
 [ext_resource type="Texture2D" uid="uid://dgbavw475d4g6" path="res://assets/level3/background/snow_80.png" id="13_88iqf"]
-[ext_resource type="PackedScene" uid="uid://dagav3yquah45" path="res://Items/berry.tscn" id="16_5wr1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wr1k"]
 size = Vector2(112, 95)
@@ -311,10 +310,3 @@ position = Vector2(975, 207)
 
 [node name="Player" parent="." instance=ExtResource("13_7cdb2")]
 position = Vector2(-302, 410)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(709.244, -80.9521)
-scale = Vector2(2, 2)
-
-[node name="Berry" parent="." instance=ExtResource("16_5wr1k")]
-position = Vector2(102, 69)

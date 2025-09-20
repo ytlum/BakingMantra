@@ -103,7 +103,7 @@ func _physics_process(delta):
 		
 	#Handle animations
 	if attacking:
-		pass # let _start_attack() handle animation
+		pass # let _start_attack() handle animation, don't override here
 	elif not is_on_floor() and velocity.y < 0 and Input.is_action_pressed("ui_accept"):
 		animated_sprite.play("Jump")
 	elif not is_on_floor() and velocity.y > 0:
@@ -138,9 +138,6 @@ func collect_item(item_name):
 func _start_attack():
 	attacking = true
 	attackhitbox.disabled = false
-	# Add the player_attack group to the hitbox
-	if not attackhitbox.is_in_group("player_attack"):
-		attackhitbox.add_to_group("player_attack")
 	animated_sprite.play("Attack")
 	attack_timer.start(attack_cooldown)
 	
@@ -280,6 +277,9 @@ func _on_footbox_area_entered(area: Area2D) -> void:
 			area.die()
 		bounce_player() # bounce upward after stomping
 		print("Stomped enemy!")
+	if area.is_in_group("chocolate_lava"):
+		die()  # Immediate death
+		print("Fell into chocolate lava!")
 		
 	# Chocolate Lava (instant death)
 	elif area.is_in_group("chocolate_lava"):

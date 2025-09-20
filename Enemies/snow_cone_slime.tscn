@@ -200,9 +200,9 @@ animation = &"walk"
 frame = 1
 frame_progress = 0.511796
 
-[node name="DetectionZone" type="Area2D" parent="."]
+[node name="ActivationArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
 position = Vector2(189.5, 115)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_jdf46")
@@ -224,3 +224,5 @@ position = Vector2(186.5, 142)
 shape = SubResource("RectangleShape2D_6er5o")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(187, 142)
+target_position = Vector2(30, 0)

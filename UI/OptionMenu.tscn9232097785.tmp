@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://brfx8aw57fphq"]
+
+[ext_resource type="Script" uid="uid://c8gl55unfdxkk" path="res://OptionMenu.gd" id="1_fk0n0"]
+[ext_resource type="Texture2D" uid="uid://bv2ngdmk5qh5q" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0014.png" id="2_w0gtr"]
+[ext_resource type="Texture2D" uid="uid://bpdspou0dhckl" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0045.png" id="3_lg1ie"]
+[ext_resource type="Texture2D" uid="uid://dqrr5uuggclii" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0043.png" id="4_7dhh8"]
+[ext_resource type="Texture2D" uid="uid://dkrdbufkb5qmp" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0044.png" id="5_67vfe"]
+[ext_resource type="AudioStream" uid="uid://crmgw5ijh4h32" path="res://Assets/audio/bgm.mp3" id="6_lg1ie"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_xwmaf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fk0n0")
+
+[node name="Tile0014" type="Sprite2D" parent="."]
+position = Vector2(597.5, 264.125)
+scale = Vector2(15.9062, 12.4297)
+texture = ExtResource("2_w0gtr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 183.0
+offset_right = 624.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 20
+text = "Audio Volume:"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 267.0
+offset_right = 624.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 20
+text = "Sound Volume:"
+
+[node name="SaveButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 363.0
+offset_right = 676.0
+offset_bottom = 408.0
+text = "Save"
+
+[node name="AudioSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 232.0
+offset_right = 723.0
+offset_bottom = 248.0
+value = 50.0
+
+[node name="SoundSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 277.0
+offset_right = 724.0
+offset_bottom = 373.0
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_lg1ie")
+volume_db = 24.0
+playback_type = 1
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_lg1ie")
+volume_db = 24.0
+parameters/looping = false
+
+[node name="Tile0045" type="Sprite2D" parent="."]
+position = Vector2(717.5, 87.25)
+scale = Vector2(3.6875, 3.23437)
+texture = ExtResource("3_lg1ie")
+
+[node name="Tile0043" type="Sprite2D" parent="."]
+position = Vector2(489.5, 87.25)
+scale = Vector2(3.53125, 3.34375)
+texture = ExtResource("4_7dhh8")
+
+[node name="Tile0044" type="Sprite2D" parent="."]
+position = Vector2(603, 84)
+scale = Vector2(3.67188, 3.26562)
+texture = ExtResource("5_67vfe")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 70.0
+offset_right = 653.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 30
+text = "Setting"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ImageTexture_xwmaf")
+
+[connection signal="value_changed" from="AudioSlider" to="." method="_on_audio_slider_value_changed"]

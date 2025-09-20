@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfsf7tc1jqqtp"
+path="res://.godot/imported/Bakery girl bgm - Main theme.mp3-fd8adc0cf3238bff30f96869e3afcb9f.mp3str"
+
+[deps]
+
+source_file="res://assets/UI/Bakery girl bgm - Main theme.mp3"
+dest_files=["res://.godot/imported/Bakery girl bgm - Main theme.mp3-fd8adc0cf3238bff30f96869e3afcb9f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://di5ngwpmyaxu1"]
+[gd_scene load_steps=56 format=3 uid="uid://bdx884fjg0dv8"]
 
 [ext_resource type="Texture2D" uid="uid://b0h8d4fo373n4" path="res://assets/UI/kenney_pixel-platformer-food-expansion (1)/Tiles/tile_0000.png" id="1_5j5gb"]
 [ext_resource type="Texture2D" uid="uid://be6khhsc7m6tu" path="res://assets/level1/level1.jpeg" id="1_uclwg"]
@@ -26,7 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://b78vat04ldsjb" path="res://assets/UI/kenney_pixel-platformer-food-expansion (1)/Tiles/tile_0035.png" id="15_2i07x"]
 [ext_resource type="Texture2D" uid="uid://dm84r8ow405d" path="res://assets/UI/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 16x16.png" id="25_fxl23"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="26_xg5g8"]
-[ext_resource type="PackedScene" uid="uid://cu6wvcmodqe6u" path="res://Obstacles/broccoli.tscn" id="27_p7b0h"]
+[ext_resource type="PackedScene" uid="uid://dfjk4t6ihcejd" path="res://Obstacles/vegetables_spawner.tscn" id="27_p7b0h"]
+[ext_resource type="PackedScene" uid="uid://dm1c5v3m8f0kk" path="res://Obstacles/spilled_oil.tscn" id="28_2i07x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfnuo"]
 texture = ExtResource("1_5j5gb")
@@ -228,7 +229,6 @@ frame_progress = 0.37195
 position = Vector2(19.1453, -0.598131)
 sprite_frames = SubResource("SpriteFrames_xg5g8")
 animation = &"heart"
-frame_progress = 0.325805
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 position = Vector2(38.8376, -0.299067)
@@ -257,5 +257,10 @@ position = Vector2(320, 155)
 [node name="Player2" parent="." instance=ExtResource("26_xg5g8")]
 position = Vector2(-341, 387)
 
-[node name="broccoli" parent="." instance=ExtResource("27_p7b0h")]
-position = Vector2(305, 377)
+[node name="obstacles" type="Node" parent="."]
+
+[node name="vegetables spawner" parent="obstacles" instance=ExtResource("27_p7b0h")]
+position = Vector2(364, -48)
+
+[node name="spilled oil" parent="obstacles" instance=ExtResource("28_2i07x")]
+position = Vector2(664, 508)

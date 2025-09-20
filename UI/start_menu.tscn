@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bgpbvukl63bb0" path="res://assets/UI/menu.png" id="2_f14c5"]
 [ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="3_j3hi8"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 process_mode = 3
 show_behind_parent = true
 layout_mode = 3

@@ -313,6 +313,19 @@ position = Vector2(975, 207)
 
 [node name="Player" parent="." instance=ExtResource("13_7cdb2")]
 position = Vector2(-82, 20)
+walk_speed = null
+run_speed = null
+crouch_speed = null
+icy_acceleration = null
+stomp_bounce_force = null
+attack_cooldown = null
+invuln_time = null
+acceleration = null
+deceleration = null
+jump_force = null
+decelerate_on_jump_release = null
+hurt_stun_time = null
+max_health = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

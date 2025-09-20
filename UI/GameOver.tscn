@@ -1,7 +1,36 @@
-[gd_scene load_steps=0 format=3 uid="uid://b1wgmu5hil4yw"]
+[gd_scene load_steps=3 format=3 uid="uid://b1wgmu5hil4yw"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Texture2D" uid="uid://t8fanlixkla7" path="res://assets/UI/gameover.png" id="1_kjexa"]
+[ext_resource type="Script" uid="uid://b6xgf3yyoum26" path="res://Scripts/game_over.gd" id="1_vjbsa"]
+
+[node name="GameOver" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_vjbsa")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 99.0
+offset_top = 1.0
+offset_right = 1039.0
+offset_bottom = 789.0
+texture = ExtResource("1_kjexa")
+
+[node name="RetryButton" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 362.0
+offset_right = 638.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 25
+text = "Retry"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 497.0
+offset_top = 426.0
+offset_right = 635.0
+offset_bottom = 469.0
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

@@ -1,30 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://ckttdx1x26koy"]
+[gd_scene load_steps=25 format=3 uid="uid://ckttdx1x26koy"]
 
-[ext_resource type="Script" uid="uid://c8jek8nkeyhpi" path="res://Scripts/snow_cone_slime.gd" id="1_k8gs8"]
-[ext_resource type="Texture2D" uid="uid://c5xkdwdvygljl" path="res://assets/level3/enemy/Attack.png" id="3_wgsg7"]
+[ext_resource type="Script" uid="uid://cyr1kbhlenshf" path="res://Scripts/snow_cone_slime.gd" id="1_k8gs8"]
 [ext_resource type="Texture2D" uid="uid://cw7hgrlqoww1i" path="res://assets/level3/enemy/Death.png" id="4_6er5o"]
 [ext_resource type="Texture2D" uid="uid://glwrnyrtovnl" path="res://assets/level3/enemy/Get Hit.png" id="5_ebf2i"]
 [ext_resource type="Texture2D" uid="uid://yh5mr0xl0wox" path="res://assets/level3/enemy/Movement.png" id="6_wgsg7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6txb"]
-atlas = ExtResource("3_wgsg7")
-region = Rect2(0, 0, 72, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktut8"]
-atlas = ExtResource("3_wgsg7")
-region = Rect2(72, 0, 72, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5g7e"]
-atlas = ExtResource("3_wgsg7")
-region = Rect2(144, 0, 72, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a657o"]
-atlas = ExtResource("3_wgsg7")
-region = Rect2(216, 0, 72, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tyr7v"]
-atlas = ExtResource("3_wgsg7")
-region = Rect2(288, 0, 72, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgrf3"]
 atlas = ExtResource("4_6er5o")
@@ -94,26 +73,6 @@ region = Rect2(384, 0, 64, 44)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s6txb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ktut8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x5g7e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a657o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tyr7v")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_cgrf3")
 }, {
 "duration": 1.0,
@@ -176,14 +135,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdf46"]
-size = Vector2(98, 213)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30bmd"]
-size = Vector2(68, 42.5)
+size = Vector2(52, 7.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wgsg7"]
-size = Vector2(62, 42)
+size = Vector2(82, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6er5o"]
 size = Vector2(63, 42)
@@ -196,31 +152,22 @@ script = ExtResource("1_k8gs8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(187, 142)
 sprite_frames = SubResource("SpriteFrames_345bn")
-animation = &"walk"
-frame = 1
-frame_progress = 0.511796
+animation = &"die"
 
-[node name="ActivationArea" type="Area2D" parent="."]
+[node name="StompDetection" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
-position = Vector2(189.5, 115)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_jdf46")
-
-[node name="Hurtbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(188, 142.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetection"]
+position = Vector2(185, 118)
 shape = SubResource("RectangleShape2D_30bmd")
 
 [node name="ContactDamage" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ContactDamage"]
-position = Vector2(188, 142)
+position = Vector2(187, 143)
 shape = SubResource("RectangleShape2D_wgsg7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(186.5, 142)
+position = Vector2(187, 143)
 shape = SubResource("RectangleShape2D_6er5o")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

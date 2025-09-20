@@ -1,6 +1,6 @@
 [gd_scene load_steps=71 format=3 uid="uid://c0bee1b0ys7vr"]
 
-[ext_resource type="Script" uid="uid://5yoh7h0xts78" path="res://Scripts/player.gd" id="1_v0k0e"]
+[ext_resource type="Script" uid="uid://dtkyfg0cya3cw" path="res://Scripts/player.gd" id="1_5wa8t"]
 [ext_resource type="Texture2D" uid="uid://b14s0hma125sc" path="res://assets/player/Attack_KG_1.png" id="2_5wa8t"]
 [ext_resource type="Texture2D" uid="uid://cew5wmcdqa8vs" path="res://assets/player/Fall_KG_1.png" id="2_6ysni"]
 [ext_resource type="Texture2D" uid="uid://dqfnlw8ecfypn" path="res://assets/player/Idle_KG_1.png" id="2_tok1r"]
@@ -249,7 +249,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vuo2u")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -263,7 +263,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7uipr")
 }],
-"loop": true,
+"loop": false,
 "name": &"CrouchIdle",
 "speed": 5.0
 }, {
@@ -280,7 +280,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bgaaw")
 }],
-"loop": true,
+"loop": false,
 "name": &"CrouchWalk",
 "speed": 5.0
 }, {
@@ -297,7 +297,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xw4su")
 }],
-"loop": true,
+"loop": false,
 "name": &"Dashing",
 "speed": 5.0
 }, {
@@ -331,7 +331,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x70vp")
 }],
-"loop": true,
+"loop": false,
 "name": &"Fall",
 "speed": 5.0
 }, {
@@ -357,7 +357,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vhfjx")
 }],
-"loop": true,
+"loop": false,
 "name": &"Frozen",
 "speed": 5.0
 }, {
@@ -374,7 +374,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rqaa0")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hurt",
 "speed": 5.0
 }, {
@@ -414,7 +414,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_roy6y")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 5.0
 }, {
@@ -446,7 +446,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j23h2"]
-size = Vector2(66.0118, 152.705)
+size = Vector2(93.6448, 152.705)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j2ni"]
 size = Vector2(76.5714, 150.865)
@@ -454,10 +454,9 @@ size = Vector2(76.5714, 150.865)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0k0e"]
 size = Vector2(69.0822, 40.8765)
 
-[node name="Player" type="CharacterBody2D" groups=["sticky"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.651398, 0.543531)
-collision_mask = 17
-script = ExtResource("1_v0k0e")
+script = ExtResource("1_5wa8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(663.957, 261.255)
@@ -468,16 +467,16 @@ texture_filter = 1
 position = Vector2(666.259, 257.575)
 scale = Vector2(2.08121, 2.48356)
 sprite_frames = SubResource("SpriteFrames_3qydi")
-animation = &"Die"
+animation = &"Attack"
 autoplay = "Idle"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(662.421, 262.174)
+position = Vector2(671.632, 262.174)
 shape = SubResource("RectangleShape2D_j23h2")
 
-[node name="AttackHitbox" type="Area2D" parent="." groups=["player_attack"]]
+[node name="AttackHitbox" type="Area2D" parent="."]
 monitoring = false
 
 [node name="AttackboxShape" type="CollisionShape2D" parent="AttackHitbox"]
@@ -497,6 +496,8 @@ shape = SubResource("RectangleShape2D_v0k0e")
 [node name="SlowTimer" type="Timer" parent="."]
 
 [node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

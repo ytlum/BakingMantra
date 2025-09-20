@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var attack_timer = $AttackTimer
 
 @export var walk_speed = 150.0
-@export var run_speed = 250.0
+@export var run_speed = 350.0
 @export var crouch_speed = 80.0 
 @export var icy_acceleration = 0.2        # used on icy floor
 @export var stomp_bounce_force = -450.0     # bounce after stomping a slime
@@ -45,6 +45,7 @@ var attacking = false
 # Movement Functions
 # ========================
 func _physics_process(delta):
+	 
 	if not is_alive:
 		return # no movement if dead
 		
@@ -137,17 +138,16 @@ func collect_item(item_name):
 func _start_attack():
 	attacking = true
 	attackhitbox.disabled = false
-	# Add the player_attack group to the hitbox
-	if not attackhitbox.is_in_group("player_attack"):
-		attackhitbox.add_to_group("player_attack")
 	animated_sprite.play("Attack")
 	attack_timer.start(attack_cooldown)
 	
 # ========================
 # Health Functions
 # ========================
-func ready():
+func _ready():
 	health = max_health
+	set_physics_process(true) # ensure physics is active
+	print("Player ready")
 	
 func take_damage(amount: int = 1):
 	if invulnerable or not is_alive:
@@ -270,10 +270,6 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 		if area.has_method("take_damage"):
 			area.take_damage(1)
 		print("Killed the honeybee!")
-	if area.is_in_group("snow_cone_slime"):
-		if area.has_method("take_damage"):
-			area.take_damage(1)
-			print("Attacked snow cone slime!")
 
 func _on_footbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("stompable"):
@@ -318,3 +314,4 @@ func _on_attack_timer_timeout() -> void:
 	attackhitbox.disabled = true
 	attacking = false
 	print("Attack ended")
+	

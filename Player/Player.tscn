@@ -420,6 +420,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8g4oa")
+}],
+"loop": true,
+"name": &"Stunned",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j23h2")
 }, {
 "duration": 1.0,
@@ -449,7 +457,7 @@ animations = [{
 size = Vector2(93.6448, 152.705)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j2ni"]
-size = Vector2(76.5714, 150.865)
+size = Vector2(144.448, 255.735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0k0e"]
 size = Vector2(69.0822, 40.8765)
@@ -467,7 +475,7 @@ texture_filter = 1
 position = Vector2(220.733, 872.437)
 scale = Vector2(2.08121, 2.48356)
 sprite_frames = SubResource("SpriteFrames_3qydi")
-animation = &"Attack"
+animation = &"Stunned"
 autoplay = "Idle"
 
 [node name="Hurtbox" type="Area2D" parent="."]
@@ -480,7 +488,8 @@ shape = SubResource("RectangleShape2D_j23h2")
 monitoring = false
 
 [node name="AttackboxShape" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(291.444, 876.117)
+position = Vector2(325.382, 869.315)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0j2ni")
 
 [node name="Footbox" type="Area2D" parent="."]
@@ -503,9 +512,12 @@ one_shot = true
 position = Vector2(985.573, 664.176)
 scale = Vector2(0.283206, -8.9227)
 process_callback = 0
+limit_top = 0
+limit_right = 3500
 limit_bottom = 700
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.0
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

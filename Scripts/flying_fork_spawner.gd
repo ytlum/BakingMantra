@@ -3,7 +3,7 @@ extends Node2D
 @export var flying_fork_scene: PackedScene
 @export var spawn_interval := 3.0
 @export var spawn_heights: Array[float] = [100, 150, 200, 250]  # Different Y positions
-@export var max_forks := 4
+@export var max_forks := 100
 
 var current_forks := 0
 

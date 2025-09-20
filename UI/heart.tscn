@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4scni38qegh3"]
+
+[ext_resource type="Texture2D" uid="uid://b3lnqro4sb5ub" path="res://assets/UI/Pixel Heart Animation GIFs & Spritesheets, 32x32 and 16x16/Pixel Heart Sprite Sheet 32x32.png" id="1_ukt74"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kav31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ukt74")
+}],
+"loop": true,
+"name": &"beating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ukt74")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Heart" type="AnimatedSprite2D"]
+position = Vector2(135, 126)
+sprite_frames = SubResource("SpriteFrames_kav31")
+animation = &"idle"
+autoplay = "idle"

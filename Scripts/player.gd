@@ -30,7 +30,7 @@ var is_hurt: bool = false
 
 # --- Health System ---
 @export var max_health = 3
-var health = 3
+@onready var health : int = max_health
 var is_alive = true
 
 
@@ -152,12 +152,12 @@ func collect_item(item_name):
 # ========================
 func _start_attack():
 	attacking = true
-	attackhitbox.disabled = false
+	attackhitbox.disabled = false   # Enable the collision
 	animated_sprite.play("Attack")
 	attack_timer.start(attack_cooldown)
+
 	MusicManager.play_sfx(attack_sfx)
 
-	
 # ========================
 # Health Functions	
 # ========================
@@ -254,9 +254,7 @@ func die():
 	print("Player died")
 	
 	await animated_sprite.animation_finished
-	
-	var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
-	get_tree().root.add_child(game_over_scene)
+	game_over()
 
 func game_over():
 	is_alive = false
@@ -298,13 +296,20 @@ func enable_slippery():
 	animated_sprite.play("Dashing")
 	print("Player on icy floor!")
 	
+
+
+	
 # ========================
 # Area/Enemy Interactions
 # ========================
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	#---Level 1---
 	# Sticky Patches (slows movement and jump cooldown)
-	if area.is_in_group("sticky"):
+	if area.name == "hitBox":
+		health -= 1
+		print_debug(health)
+		
+	elif area.is_in_group("sticky"):
 		slow_player(3.0)
 		disable_jump(2.0)
 		print("Player slowed by sticky patch!")
@@ -351,9 +356,9 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("honeybee"):
-		if area.has_method("take_damage"):
-			area.take_damage(1)
-		print("Killed the honeybee!")
+		if area.has_method("die"):
+			area.die()
+		print("honey bee died")
 
 func _on_footbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("stompable"):
@@ -402,3 +407,11 @@ func _on_attack_timer_timeout() -> void:
 	attacking = false
 	print("Attack ended")
 	
+
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_detection_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

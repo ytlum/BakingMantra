@@ -1,10 +1,9 @@
-[gd_scene load_steps=144 format=3 uid="uid://6prn4468pa1e"]
+[gd_scene load_steps=143 format=3 uid="uid://b3e1xgqxwjcln"]
 
 [ext_resource type="Texture2D" uid="uid://dyb2xbr37spjy" path="res://assets/level4/Background/background.png" id="1_ftfcu"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="2_mj332"]
 [ext_resource type="Texture2D" uid="uid://ddhmvlt574wds" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/cookieChoco.png" id="3_nbfrw"]
 [ext_resource type="Texture2D" uid="uid://cgfvrq41yy4h1" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/choco.png" id="3_o8wwk"]
-[ext_resource type="Resource" uid="uid://401i3ktu3syl" path="res://Inventory/playerinv.tres" id="3_y4h4i"]
 [ext_resource type="Texture2D" uid="uid://b7528efwh6vnr" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/chocoHalfAltLeft.png" id="4_2kggn"]
 [ext_resource type="Texture2D" uid="uid://c02a87evxemn6" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/chocoHalfAltMid.png" id="5_e4m1f"]
 [ext_resource type="Texture2D" uid="uid://dji8ul30wni56" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/chocoHalfAltRight.png" id="6_tkwfe"]
@@ -56,8 +55,8 @@
 [ext_resource type="Texture2D" uid="uid://cuvbuvrj4vks8" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/chocoHalfAlt.png" id="50_npg24"]
 [ext_resource type="Texture2D" uid="uid://baqtsmofyqbnl" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/lollipopRed.png" id="51_o8wwk"]
 [ext_resource type="Texture2D" uid="uid://cgilbpvuikgc1" path="res://Obstacles/Figure/marshmellow.png" id="54_yrhmp"]
-[ext_resource type="Texture2D" uid="uid://ceuptvo84sbek" path="res://Enemies/Bees/S_Death.png" id="55_yrhmp"]
-[ext_resource type="Texture2D" uid="uid://iynmtetvhr84" path="res://Enemies/Bees/S_Walk.png" id="56_8ahtm"]
+[ext_resource type="Texture2D" uid="uid://ceuptvo84sbek" path="res://assets/level4/Enemy/S_Death.png" id="55_yrhmp"]
+[ext_resource type="Texture2D" uid="uid://iynmtetvhr84" path="res://assets/level4/Enemy/S_Walk.png" id="56_8ahtm"]
 [ext_resource type="Texture2D" uid="uid://be3gjtf77rube" path="res://assets/level4/Background/doors.png" id="57_8ahtm"]
 [ext_resource type="Texture2D" uid="uid://dkjp0vigrp4s7" path="res://assets/level4/Background/7621d12646dc99e350c6b7230a8929fd-removebg-preview.png" id="57_i8qc6"]
 [ext_resource type="Texture2D" uid="uid://dq3tcwsw0dycf" path="res://assets/level4/Background/Lucid_Origin_Vibrant_pixel_art_image_of_intricately_designed_g_1-removebg-preview.png" id="59_yi26j"]
@@ -1271,7 +1270,6 @@ centered = false
 [node name="Player" parent="." instance=ExtResource("2_mj332")]
 z_index = 1
 position = Vector2(151, 632)
-inv = ExtResource("3_y4h4i")
 
 [node name="Platform" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4p5p5")
@@ -1311,7 +1309,7 @@ shape = SubResource("RectangleShape2D_874d3")
 
 [node name="Bees" type="Node2D" parent="."]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Bees"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Bees" groups=["player"]]
 motion_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/CharacterBody2D"]
@@ -1323,22 +1321,6 @@ position = Vector2(1029, 77)
 scale = Vector2(2.39583, 2.58333)
 sprite_frames = SubResource("SpriteFrames_tkwfe")
 animation = &"Fly"
-
-[node name="Bees2" type="Node2D" parent="."]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Bees2"]
-motion_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees2/CharacterBody2D"]
-position = Vector2(63, 103)
-shape = SubResource("CapsuleShape2D_0rrql")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bees2/CharacterBody2D"]
-position = Vector2(66, 95)
-scale = Vector2(2.39583, 2.58333)
-sprite_frames = SubResource("SpriteFrames_tkwfe")
-animation = &"Fly"
-flip_h = true
 
 [node name="Collectibles" type="Node2D" parent="."]
 
@@ -1436,3 +1418,21 @@ position = Vector2(1006, 162)
 scale = Vector2(2.07813, 2.7)
 sprite_frames = SubResource("SpriteFrames_l013c")
 animation = &"Platform"
+
+[node name="Bees2" type="Node2D" parent="."]
+position = Vector2(346, 320)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Bees2"]
+position = Vector2(211, 179)
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees2/CharacterBody2D"]
+position = Vector2(63, 103)
+shape = SubResource("CapsuleShape2D_0rrql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bees2/CharacterBody2D"]
+position = Vector2(66, 95)
+scale = Vector2(2.39583, 2.58333)
+sprite_frames = SubResource("SpriteFrames_tkwfe")
+animation = &"Fly"
+flip_h = true

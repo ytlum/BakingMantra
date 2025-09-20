@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t8fanlixkla7"
-path="res://.godot/imported/gameover.png-c10ba064ef7cd67882775e9bf51101da.ctex"
+uid="uid://b4nvhki418tfy"
+path="res://.godot/imported/door.png-40e5237c2282b9b2ce0d30948e9dd49d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/gameover.png"
-dest_files=["res://.godot/imported/gameover.png-c10ba064ef7cd67882775e9bf51101da.ctex"]
+source_file="res://assets/level3/background/door.png"
+dest_files=["res://.godot/imported/door.png-40e5237c2282b9b2ce0d30948e9dd49d.ctex"]
 
 [params]
 

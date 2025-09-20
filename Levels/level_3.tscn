@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dagav3yquah45" path="res://Items/berry.tscn" id="16_5wr1k"]
 [ext_resource type="PackedScene" uid="uid://cbfghflex5gm8" path="res://UI/start_menu.tscn" id="17_wtqdv"]
 [ext_resource type="PackedScene" uid="uid://d230w7fehs7tm" path="res://UI/Heart_ui.tscn" id="18_1yi2b"]
-[ext_resource type="PackedScene" path="res://assets/level3/projectiles/door.tscn" id="18_462h2"]
+[ext_resource type="PackedScene" uid="uid://cpcwly11gjoeo" path="res://assets/level3/projectiles/door.tscn" id="18_462h2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yi2b"]
 size = Vector2(112, 198)

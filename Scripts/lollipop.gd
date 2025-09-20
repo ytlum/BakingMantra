@@ -62,6 +62,6 @@ func _on_body_entered(body):
 		return
 	
 	# Handle player collision
-	if body.is_in_group("player") and body.has_method("stun_player"):
+	if "Player" in body.name and body.has_method("freeze_player"):
 		body.stun_player(stun_duration)
 		print("Player stunned!")

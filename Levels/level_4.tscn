@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://byanehw31rc2m"]
+[gd_scene load_steps=151 format=3 uid="uid://b8cp3lc72t2ow"]
 
 [ext_resource type="Texture2D" uid="uid://dyb2xbr37spjy" path="res://assets/level4/Background/background.png" id="1_ftfcu"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="2_mj332"]
@@ -56,16 +56,16 @@
 [ext_resource type="Texture2D" uid="uid://baqtsmofyqbnl" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/lollipopRed.png" id="51_o8wwk"]
 [ext_resource type="Script" uid="uid://b45d04us0rrw1" path="res://Scripts/lollipop.gd" id="54_ei8qt"]
 [ext_resource type="Texture2D" uid="uid://cgilbpvuikgc1" path="res://Obstacles/Figure/marshmellow.png" id="54_yrhmp"]
-[ext_resource type="Script" path="res://Scripts/bouncy_marshmellow.gd" id="55_y4h4i"]
+[ext_resource type="Script" uid="uid://irnw7adprq6b" path="res://Scripts/bouncy_marshmellow.gd" id="55_y4h4i"]
 [ext_resource type="Texture2D" uid="uid://ceuptvo84sbek" path="res://assets/level4/Enemy/S_Death.png" id="55_yrhmp"]
 [ext_resource type="Texture2D" uid="uid://iynmtetvhr84" path="res://assets/level4/Enemy/S_Walk.png" id="56_8ahtm"]
 [ext_resource type="Texture2D" uid="uid://be3gjtf77rube" path="res://assets/level4/Background/doors.png" id="57_8ahtm"]
 [ext_resource type="Texture2D" uid="uid://dkjp0vigrp4s7" path="res://assets/level4/Background/7621d12646dc99e350c6b7230a8929fd-removebg-preview.png" id="57_i8qc6"]
-[ext_resource type="Script" path="res://Scripts/honey_bee.gd" id="58_6ownd"]
+[ext_resource type="Script" uid="uid://6fjhssou0uyl" path="res://Scripts/honey_bee.gd" id="58_6ownd"]
 [ext_resource type="Texture2D" uid="uid://dq3tcwsw0dycf" path="res://assets/level4/Background/Lucid_Origin_Vibrant_pixel_art_image_of_intricately_designed_g_1-removebg-preview.png" id="59_yi26j"]
 [ext_resource type="Texture2D" uid="uid://bo4hxoelwh50g" path="res://assets/level4/Background/how-to-make-pixel-art-candy-7-removebg-preview.png" id="60_y4h4i"]
 [ext_resource type="Texture2D" uid="uid://bbytilpkmgcye" path="res://assets/level4/Background/On (32x10).png" id="62_yi26j"]
-[ext_resource type="Script" path="res://Scripts/dropping_platform.gd" id="65_sted3"]
+[ext_resource type="Script" uid="uid://bcr4recg43smy" path="res://Scripts/dropping_platform.gd" id="65_sted3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ei8qt"]
 texture = ExtResource("3_nbfrw")

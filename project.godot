@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BakingMantra"
-run/main_scene="uid://byanehw31rc2m"
+run/main_scene="uid://bxljq01km86pd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -494,10 +494,16 @@ texture = ExtResource("8_vltsr")
 [node name="obstacles" type="Node2D" parent="."]
 
 [node name="flying fork spawner" parent="obstacles" instance=ExtResource("10_rp5ft")]
-position = Vector2(567, 195)
+visible = false
+position = Vector2(1189, 188)
 
 [node name="flying fork spawner2" parent="obstacles" instance=ExtResource("10_rp5ft")]
-position = Vector2(1374, 479)
+visible = false
+position = Vector2(2037, 467)
+
+[node name="flying fork spawner3" parent="obstacles" instance=ExtResource("10_rp5ft")]
+visible = false
+position = Vector2(2776, 151)
 
 [node name="chocolate lava" parent="obstacles" instance=ExtResource("14_lmqi1")]
 position = Vector2(1256, 569)
@@ -506,18 +512,20 @@ position = Vector2(1256, 569)
 position = Vector2(1640, 569)
 
 [node name="flying fork" parent="obstacles" instance=ExtResource("14_5yfph")]
+visible = false
 position = Vector2(1828, 356)
 
 [node name="flying fork3" parent="obstacles" instance=ExtResource("14_5yfph")]
-position = Vector2(2574, 42)
+visible = false
+position = Vector2(2586, 44)
 
 [node name="flying fork2" parent="obstacles" instance=ExtResource("14_5yfph")]
+visible = false
 position = Vector2(976, 83)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("15_5yfph")]
-visible = false
 offset_left = -1.0
 offset_top = 2.0
 offset_right = -1.0

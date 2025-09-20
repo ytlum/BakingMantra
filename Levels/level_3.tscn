@@ -309,7 +309,7 @@ position = Vector2(975, 207)
 
 [node name="Collectibles" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("13_7cdb2")]
-position = Vector2(-302, 410)
-
 [node name="Berry" parent="." instance=ExtResource("16_5wr1k")]
+
+[node name="Player" parent="." instance=ExtResource("13_7cdb2")]
+position = Vector2(-82, 20)

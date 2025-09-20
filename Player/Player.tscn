@@ -459,12 +459,12 @@ scale = Vector2(0.651398, 0.543531)
 script = ExtResource("1_5wa8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(663.957, 261.255)
+position = Vector2(218.431, 876.117)
 shape = SubResource("RectangleShape2D_q3lat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(666.259, 257.575)
+position = Vector2(220.733, 872.437)
 scale = Vector2(2.08121, 2.48356)
 sprite_frames = SubResource("SpriteFrames_3qydi")
 animation = &"Attack"
@@ -473,20 +473,20 @@ autoplay = "Idle"
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(671.632, 262.174)
+position = Vector2(226.106, 877.036)
 shape = SubResource("RectangleShape2D_j23h2")
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 monitoring = false
 
 [node name="AttackboxShape" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(736.97, 261.255)
+position = Vector2(291.444, 876.117)
 shape = SubResource("RectangleShape2D_0j2ni")
 
 [node name="Footbox" type="Area2D" parent="."]
 
 [node name="FootboxShape" type="CollisionShape2D" parent="Footbox"]
-position = Vector2(663.957, 362.445)
+position = Vector2(218.431, 977.307)
 shape = SubResource("RectangleShape2D_v0k0e")
 
 [node name="InvulnTimer" type="Timer" parent="."]
@@ -498,6 +498,14 @@ shape = SubResource("RectangleShape2D_v0k0e")
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(985.573, 664.176)
+scale = Vector2(0.283206, -8.9227)
+process_callback = 0
+limit_bottom = 760
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

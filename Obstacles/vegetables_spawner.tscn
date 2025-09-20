@@ -1,0 +1,11 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfjk4t6ihcejd"]
+
+[ext_resource type="Script" uid="uid://eqgtd7uewflc" path="res://Scripts/vegetables_spawner.gd" id="1_ppbll"]
+[ext_resource type="PackedScene" uid="uid://cu6wvcmodqe6u" path="res://Obstacles/broccoli.tscn" id="2_qwh3t"]
+[ext_resource type="PackedScene" uid="uid://bo0xjh1p46h3h" path="res://Obstacles/corn.tscn" id="3_5ohax"]
+[ext_resource type="PackedScene" uid="uid://bw2sjmwi4tumk" path="res://Obstacles/durian.tscn" id="4_6su4g"]
+[ext_resource type="PackedScene" uid="uid://bukh4yk454lax" path="res://Obstacles/pumpkin.tscn" id="5_pojur"]
+
+[node name="vegetables spawner" type="Node2D"]
+script = ExtResource("1_ppbll")
+vegetable_scenes = Array[PackedScene]([ExtResource("2_qwh3t"), ExtResource("3_5ohax"), ExtResource("4_6su4g"), ExtResource("5_pojur")])

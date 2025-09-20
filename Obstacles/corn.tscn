@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo0xjh1p46h3h"]
+
+[ext_resource type="PackedScene" uid="uid://c5l2g0121i123" path="res://Obstacles/falling_vegetable.tscn" id="1_5e1b1"]
+[ext_resource type="Texture2D" uid="uid://c718bpbrbg8t4" path="res://assets/level1/corn.png" id="2_60tdu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5e1b1"]
+radius = 11.0
+height = 54.0
+
+[node name="corn" instance=ExtResource("1_5e1b1")]
+vegetable_type = "corn"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(96, 80)
+scale = Vector2(1.65385, 1.62)
+texture = ExtResource("2_60tdu")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(95, 80)
+rotation = 2.36667
+shape = SubResource("CapsuleShape2D_5e1b1")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw2sjmwi4tumk"]
+
+[ext_resource type="PackedScene" uid="uid://c5l2g0121i123" path="res://Obstacles/falling_vegetable.tscn" id="1_fs23k"]
+[ext_resource type="Texture2D" uid="uid://cwejy3xfb08mn" path="res://assets/level1/durian.png" id="2_uo1qo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvcia"]
+radius = 19.0
+
+[node name="durian" instance=ExtResource("1_fs23k")]
+vegetable_type = "durian"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(78, 59)
+scale = Vector2(1.58333, 1.46667)
+texture = ExtResource("2_uo1qo")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(78, 63)
+shape = SubResource("CircleShape2D_rvcia")

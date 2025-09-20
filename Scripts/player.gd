@@ -270,6 +270,10 @@ func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 		if area.has_method("take_damage"):
 			area.take_damage(1)
 		print("Killed the honeybee!")
+	if area.is_in_group("snow_cone_slime"):
+		if area.has_method("take_damage"):
+			area.take_damage(1)
+			print("Attacked snow cone slime!")
 
 func _on_footbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("stompable"):

@@ -1,29 +1,41 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7kvt1x4oltwp"]
+[gd_scene load_steps=24 format=3 uid="uid://b7kvt1x4oltwp"]
 
 [ext_resource type="Texture2D" uid="uid://jje0ail0ewrj" path="res://assets/level3/background/BG_01.png" id="1_4t7ew"]
-[ext_resource type="PackedScene" uid="uid://cep6vhc3562xl" path="res://Enemies/snow_cone_slime.tscn" id="1_absw3"]
+[ext_resource type="PackedScene" uid="uid://ckttdx1x26koy" path="res://Enemies/snow_cone_slime.tscn" id="1_absw3"]
 [ext_resource type="Script" uid="uid://bks06pcavt5kn" path="res://Scripts/ground.gd" id="2_padch"]
 [ext_resource type="PackedScene" uid="uid://codyvdlyk66pe" path="res://Obstacles/candy_icicle.tscn" id="3_uwxw1"]
 [ext_resource type="Texture2D" uid="uid://cwg6kblqx58re" path="res://assets/level3/background/snow_54.png" id="5_oojpf"]
 [ext_resource type="Texture2D" uid="uid://chukiahiddgrh" path="res://assets/level3/background/snow_55.png" id="6_7cdb2"]
-[ext_resource type="Script" uid="uid://1nsepgx6n0fr" path="res://Scripts/frost_berry.gd" id="6_ay5qi"]
 [ext_resource type="Texture2D" uid="uid://djbixm5a6nchp" path="res://assets/level3/background/snow_53.png" id="6_trpa2"]
 [ext_resource type="Texture2D" uid="uid://ckk4lgouxxj0k" path="res://assets/level3/background/snow_75.png" id="7_4t7ew"]
 [ext_resource type="Texture2D" uid="uid://caexovj0immxu" path="res://assets/level3/background/snow_61.png" id="8_7cdb2"]
 [ext_resource type="Texture2D" uid="uid://bvgv705c8arj3" path="res://assets/level3/background/snow_60.png" id="9_2urlj"]
+[ext_resource type="Texture2D" uid="uid://dub3gb58rn5tr" path="res://assets/level3/background/snow_58.png" id="10_2urlj"]
+[ext_resource type="Texture2D" uid="uid://bdshsno20rrqm" path="res://assets/level3/background/snow_78.png" id="11_88iqf"]
+[ext_resource type="Texture2D" uid="uid://vs54iw2q8n5j" path="res://assets/level3/background/snow_59.png" id="12_5wr1k"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="13_7cdb2"]
+[ext_resource type="Texture2D" uid="uid://dgbavw475d4g6" path="res://assets/level3/background/snow_80.png" id="13_88iqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wr1k"]
+size = Vector2(112, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtqdv"]
+size = Vector2(109.5, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88iqf"]
+size = Vector2(333, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2urlj"]
+size = Vector2(112, 624)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cdb2"]
-size = Vector2(445, 40.4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t7ew"]
-size = Vector2(22, 19.2)
+size = Vector2(887, 40.4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oojpf"]
 size = Vector2(14, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trpa2"]
-size = Vector2(665, 95)
+size = Vector2(1058, 95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck3gp"]
 size = Vector2(553, 95)
@@ -36,22 +48,38 @@ position = Vector2(563, 384)
 scale = Vector2(0.666667, 0.666667)
 texture = ExtResource("1_4t7ew")
 
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(1840, 384)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("1_4t7ew")
+
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="SnowConeSlime" parent="Enemies" instance=ExtResource("1_absw3")]
-position = Vector2(-247, 211)
+[node name="snow cone slime" parent="Enemies" instance=ExtResource("1_absw3")]
+position = Vector2(1126, 484)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 script = ExtResource("2_padch")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
-position = Vector2(981.392, 247.8)
-shape = SubResource("RectangleShape2D_7cdb2")
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1481, 601.5)
+shape = SubResource("RectangleShape2D_5wr1k")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
-position = Vector2(1036, 601)
-scale = Vector2(5, 5)
-shape = SubResource("RectangleShape2D_4t7ew")
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1592.75, 554)
+shape = SubResource("RectangleShape2D_wtqdv")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
+position = Vector2(433.5, 354)
+shape = SubResource("RectangleShape2D_88iqf")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground"]
+position = Vector2(-21, 336)
+shape = SubResource("RectangleShape2D_2urlj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1092.5, 247.8)
+shape = SubResource("RectangleShape2D_7cdb2")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
 position = Vector2(704, 601)
@@ -59,7 +87,7 @@ scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_oojpf")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
-position = Vector2(870.5, 696.5)
+position = Vector2(1119, 696.5)
 shape = SubResource("RectangleShape2D_trpa2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
@@ -67,9 +95,9 @@ position = Vector2(199.5, 695.5)
 shape = SubResource("RectangleShape2D_ck3gp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
-position = Vector2(-21, 695.6)
+position = Vector2(-21, 315)
 scale = Vector2(0.873313, 0.74375)
-texture = ExtResource("5_oojpf")
+texture = ExtResource("7_4t7ew")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground"]
 position = Vector2(90, 695.6)
@@ -92,7 +120,7 @@ scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("6_7cdb2")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Ground"]
-position = Vector2(593, 696)
+position = Vector2(646, 696)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("6_trpa2")
 
@@ -109,7 +137,7 @@ texture = ExtResource("5_oojpf")
 [node name="Sprite2D10" type="Sprite2D" parent="Ground"]
 position = Vector2(1036.89, 696.6)
 scale = Vector2(0.873313, 0.74375)
-texture = ExtResource("7_4t7ew")
+texture = ExtResource("5_oojpf")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Ground"]
 position = Vector2(704, 696)
@@ -121,18 +149,13 @@ position = Vector2(704, 601)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("5_oojpf")
 
-[node name="Sprite2D14" type="Sprite2D" parent="Ground"]
-position = Vector2(1037, 601)
-scale = Vector2(0.873, 0.756)
-texture = ExtResource("5_oojpf")
-
 [node name="Sprite2D11" type="Sprite2D" parent="Ground"]
-position = Vector2(1146.89, 696.6)
+position = Vector2(1147.89, 696.6)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("5_oojpf")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Ground"]
-position = Vector2(814.892, 274.6)
+position = Vector2(705, 274.6)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("8_7cdb2")
 
@@ -151,6 +174,126 @@ position = Vector2(925.892, 274.6)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("9_2urlj")
 
+[node name="Sprite2D5" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 695)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 600)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 505)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 410)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Ground"]
+position = Vector2(432.892, 390.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("10_2urlj")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Ground"]
+position = Vector2(814, 274.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("9_2urlj")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 220)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 125)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Ground"]
+position = Vector2(-21, 30)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Ground"]
+position = Vector2(322.892, 390.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("11_88iqf")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Ground"]
+position = Vector2(544.892, 390.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("12_5wr1k")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Ground"]
+position = Vector2(1259, 274)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("9_2urlj")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Ground"]
+position = Vector2(1370, 274)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("9_2urlj")
+
+[node name="Sprite2D31" type="Sprite2D" parent="Ground"]
+position = Vector2(1481, 274)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("13_88iqf")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Ground"]
+position = Vector2(1259, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
+[node name="Sprite2D33" type="Sprite2D" parent="Ground"]
+position = Vector2(1370, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
+[node name="Sprite2D34" type="Sprite2D" parent="Ground"]
+position = Vector2(1481, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D35" type="Sprite2D" parent="Ground"]
+position = Vector2(1481, 601)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("6_trpa2")
+
+[node name="Sprite2D36" type="Sprite2D" parent="Ground"]
+position = Vector2(1592, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D37" type="Sprite2D" parent="Ground"]
+position = Vector2(1592, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D38" type="Sprite2D" parent="Ground"]
+position = Vector2(1592, 601)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D39" type="Sprite2D" parent="Ground"]
+position = Vector2(1592, 506)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("6_trpa2")
+
+[node name="Sprite2D40" type="Sprite2D" parent="Ground"]
+position = Vector2(1813, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("6_trpa2")
+
+[node name="Sprite2D41" type="Sprite2D" parent="Ground"]
+position = Vector2(1925, 696)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
@@ -158,33 +301,16 @@ texture = ExtResource("9_2urlj")
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="CandyIcicle" parent="Obstacles" instance=ExtResource("3_uwxw1")]
-position = Vector2(753, 201)
+position = Vector2(219, 320)
 
 [node name="CandyIcicle2" parent="Obstacles" instance=ExtResource("3_uwxw1")]
-position = Vector2(969, 202)
+position = Vector2(975, 207)
 
 [node name="Collectibles" type="Node2D" parent="."]
 
-[node name="FrostBerry" type="Area2D" parent="Collectibles"]
-script = ExtResource("6_ay5qi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Collectibles/FrostBerry"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/FrostBerry"]
-
-[node name="FrostBerry1" type="Area2D" parent="Collectibles"]
-script = ExtResource("6_ay5qi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Collectibles/FrostBerry1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/FrostBerry1"]
-
-[node name="FrostBerry2" type="Area2D" parent="Collectibles"]
-script = ExtResource("6_ay5qi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Collectibles/FrostBerry2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/FrostBerry2"]
-
 [node name="Player" parent="." groups=["player"] instance=ExtResource("13_7cdb2")]
-position = Vector2(-342, 111)
+position = Vector2(-302, 410)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(709.244, -80.9521)
+scale = Vector2(2, 2)

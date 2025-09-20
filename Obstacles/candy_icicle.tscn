@@ -143,7 +143,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -172,6 +172,7 @@ rotation = 1.5708
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lcc2s")
 animation = &"fall"
+frame_progress = 0.207508
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(122, 99)

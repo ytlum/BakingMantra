@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bukh4yk454lax"]
+
+[ext_resource type="PackedScene" uid="uid://c5l2g0121i123" path="res://Obstacles/falling_vegetable.tscn" id="1_dm6mk"]
+[ext_resource type="Texture2D" uid="uid://bcl1yjsm35b7p" path="res://assets/level1/pumpkin.png" id="2_51kwa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xwxmx"]
+radius = 26.0192
+
+[node name="pumpkin" instance=ExtResource("1_dm6mk")]
+vegetable_type = "pumpkin"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(90, 64)
+scale = Vector2(1.89286, 1.78571)
+texture = ExtResource("2_51kwa")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(90, 66)
+shape = SubResource("CircleShape2D_xwxmx")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci62281a7ciw5"]
+
+[ext_resource type="Script" uid="uid://pa8ai1fx3wqo" path="res://Scripts/flying_fork_spawner.gd" id="1_bviil"]
+[ext_resource type="PackedScene" uid="uid://kx25ybvtsr5m" path="res://Obstacles/flying_fork.tscn" id="2_qnogp"]
+
+[node name="flying fork spawner" type="Node2D"]
+script = ExtResource("1_bviil")
+flying_fork_scene = ExtResource("2_qnogp")

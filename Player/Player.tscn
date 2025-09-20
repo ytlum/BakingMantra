@@ -504,9 +504,11 @@ position = Vector2(985.573, 664.176)
 scale = Vector2(0.283206, -8.9227)
 process_callback = 0
 limit_top = 0
+limit_right = 3500
 limit_bottom = 700
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.0
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

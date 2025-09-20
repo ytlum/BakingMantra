@@ -1,17 +1,16 @@
-extends Node2D
+extends Control
 
-@onready var hearts = [
-	$Heart1,
-	$Heart2,
-	$Heart3
-]
+@export var heart_full: Texture
+@export var heart_empty: Texture
+var hearts := []
 
-# 更新爱心UI
-func update_hearts(health: int):
-	print("update_hearts called with:", health)
+func _ready():
+	hearts = [$Heart1, $Heart2, $Heart3]
+
+func update_hearts(current_health: int):
 	for i in range(hearts.size()):
-		print("Checking heart:", i, "Node:", hearts[i])
-		if i < health:
-			hearts[i].play("Full")   # 有血
+		if i < current_health:
+			hearts[i].texture = heart_full
 		else:
-			hearts[i].play("Empty")  # 没血
+			hearts[i].texture = heart_empty
+	print("UI updated to: ", current_health)  # debug

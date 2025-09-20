@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://3y7odpsgd8x6" path="res://assets/level2/shot-sword.png" id="1_g6p0j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nqy0"]
-radius = 13.0
-height = 164.0
+radius = 9.0
+height = 100.0
 
 [node name="flying fork" type="Area2D"]
 script = ExtResource("1_3nqy0")
@@ -13,10 +13,10 @@ script = ExtResource("1_3nqy0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(205, 107)
 rotation = 3.14159
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("1_g6p0j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(204, 106)
+position = Vector2(205, 107)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3nqy0")

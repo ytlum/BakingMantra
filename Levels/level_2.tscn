@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=19 format=3 uid="uid://bxljq01km86pd"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://bxljq01km86pd"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
@@ -9,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cg1yidv5m0bge" path="res://assets/level2/bigflowers_props.png" id="6_fbld2"]
 [ext_resource type="Texture2D" uid="uid://c6ffmrel6tq43" path="res://assets/level2/flowers_props.png" id="7_pml6m"]
 [ext_resource type="Texture2D" uid="uid://bwj0ubalckk26" path="res://assets/level2/door.png" id="8_vltsr"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://kx25ybvtsr5m" path="res://Obstacles/flying_fork.tscn" id="9_vltsr"]
 [ext_resource type="PackedScene" uid="uid://ci62281a7ciw5" path="res://Obstacles/flying_fork_spawner.tscn" id="10_rp5ft"]
 [ext_resource type="Texture2D" uid="uid://8x1hhvyp1kaj" path="res://assets/background/bg_0.png" id="11_lmqi1"]
@@ -16,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://bre8kfd0xh5ri" path="res://assets/background/bg_2.png" id="13_w6yvm"]
 [ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="15_w6yvm"]
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="16_jcvcn"]
+=======
+[ext_resource type="PackedScene" uid="uid://ci62281a7ciw5" path="res://Obstacles/flying_fork_spawner.tscn" id="9_vltsr"]
+[ext_resource type="PackedScene" uid="uid://duo53nqelljcd" path="res://Obstacles/chocolate_lava.tscn" id="10_rp5ft"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -498,8 +507,27 @@ position = Vector2(665, 330)
 [node name="flying fork spawner" parent="." instance=ExtResource("10_rp5ft")]
 position = Vector2(341, 528)
 
+<<<<<<< Updated upstream
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(831, 287)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("15_w6yvm")
 script = ExtResource("16_jcvcn")
+=======
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/ParallaxBackground"]
+visible = false
+texture_repeat = 2
+position = Vector2(988, 44)
+scale = Vector2(762.908, 878)
+texture = ExtResource("1_kbe2v")
+region_enabled = true
+
+[node name="obstacles" type="Node2D" parent="."]
+
+[node name="flying fork spawner" parent="obstacles" instance=ExtResource("9_vltsr")]
+position = Vector2(1292, 625)
+spawn_heights = Array[float]([300.0, 350.0, 400.0, 450.0])
+
+[node name="chocolate lava" parent="obstacles" instance=ExtResource("10_rp5ft")]
+position = Vector2(247, 530)
+>>>>>>> Stashed changes

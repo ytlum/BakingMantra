@@ -1269,7 +1269,8 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_mj332")]
 z_index = 1
-position = Vector2(-49, 6.10352e-05)
+
+position = Vector2(196, -17.9999)
 
 [node name="Platform" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4p5p5")

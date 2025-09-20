@@ -51,7 +51,7 @@ var jump_sfx = preload("res://assets/audio/jump.mp3")
 var attack_sfx = preload("res://assets/audio/attack.mp3")
 var walk_sfx = preload("res://assets/audio/walk.mp3")
 var hurt_sfx = preload("res://assets/audio/hurt.mp3")
-
+	
 
 
 # ========================

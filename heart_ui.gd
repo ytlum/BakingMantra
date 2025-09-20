@@ -1,15 +1,11 @@
 extends Control
 
-@onready var hearts = [
-	$Heart1,
-	$Heart2,
-	$Heart3
-]
+@onready var heart_1 = $Heart1
+@onready var heart_2 = $Heart2
+@onready var heart_3 = $Heart3
 
-# 更新爱心UI
-func update_hearts(health: int):
+func update_hearts(current_health: int):
+	var hearts = [heart_1, heart_2, heart_3]
+
 	for i in range(hearts.size()):
-		if i < health:
-			hearts[i].play("Full")   # 有血，播放满心动画
-		else:
-			hearts[i].play("Empty")  # 没血，播放空心动画
+		hearts[i].visible = i < current_health

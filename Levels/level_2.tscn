@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://vc6v7fjmjjk6"]
+[gd_scene load_steps=19 format=3 uid="uid://bxljq01km86pd"]
 
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="3_dgq3b"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://kx25ybvtsr5m" path="res://Obstacles/flying_fork.tscn" id="14_5yfph"]
 [ext_resource type="PackedScene" uid="uid://duo53nqelljcd" path="res://Obstacles/chocolate_lava.tscn" id="14_lmqi1"]
 [ext_resource type="PackedScene" uid="uid://cbfghflex5gm8" path="res://UI/start_menu.tscn" id="15_5yfph"]
+[ext_resource type="PackedScene" uid="uid://d230w7fehs7tm" path="res://UI/Heart_ui.tscn" id="16_w6yvm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -521,3 +522,9 @@ offset_left = -1.0
 offset_top = 2.0
 offset_right = -1.0
 offset_bottom = 2.0
+
+[node name="HeartsUI" parent="." instance=ExtResource("16_w6yvm")]
+offset_left = 469.0
+offset_top = 18.0
+offset_right = 469.0
+offset_bottom = 18.0

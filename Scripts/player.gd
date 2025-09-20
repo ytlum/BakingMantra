@@ -30,7 +30,7 @@ var is_hurt: bool = false
 
 # --- Health System ---
 @export var max_health = 3
-var health = 3
+@onready var health : int = max_health
 var is_alive = true
 
 
@@ -279,13 +279,20 @@ func enable_slippery():
 	animated_sprite.play("Dashing")
 	print("Player on icy floor!")
 	
+
+
+	
 # ========================
 # Area/Enemy Interactions
 # ========================
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	#---Level 1---
 	# Sticky Patches (slows movement and jump cooldown)
-	if area.is_in_group("sticky"):
+	if area.name == "hitBox":
+		health -= 1
+		print_debug(health)
+		
+	elif area.is_in_group("sticky"):
 		slow_player(3.0)
 		disable_jump(2.0)
 		print("Player slowed by sticky patch!")

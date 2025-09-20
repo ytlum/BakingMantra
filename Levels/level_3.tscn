@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b7kvt1x4oltwp"]
+[gd_scene load_steps=31 format=3 uid="uid://b7kvt1x4oltwp"]
 
 [ext_resource type="Texture2D" uid="uid://jje0ail0ewrj" path="res://assets/level3/background/BG_01.png" id="1_4t7ew"]
 [ext_resource type="PackedScene" uid="uid://ckttdx1x26koy" path="res://Enemies/snow_cone_slime.tscn" id="1_absw3"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dagav3yquah45" path="res://Items/berry.tscn" id="16_5wr1k"]
 [ext_resource type="PackedScene" uid="uid://cbfghflex5gm8" path="res://UI/start_menu.tscn" id="17_wtqdv"]
 [ext_resource type="PackedScene" uid="uid://d230w7fehs7tm" path="res://UI/Heart_ui.tscn" id="18_1yi2b"]
+[ext_resource type="PackedScene" uid="uid://cpcwly11gjoeo" path="res://assets/level3/projectiles/door.tscn" id="18_462h2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yi2b"]
 size = Vector2(112, 198)
@@ -456,3 +457,6 @@ texture = ExtResource("7_4t7ew")
 position = Vector2(2423.89, 30.6)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("7_4t7ew")
+
+[node name="door" parent="." instance=ExtResource("18_462h2")]
+position = Vector2(2039, 154)

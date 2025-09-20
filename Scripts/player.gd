@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var hurtbox = $Hurtbox
 @onready var footbox = $Footbox
 @onready var attackhitbox = $AttackHitbox/AttackboxShape
+@onready var hearts_ui = get_parent().get_node("CanvasLayer/HeartsUI")
 
 @onready var invuln_timer = $InvulnTimer
 @onready var freeze_timer = $FreezeTimer
@@ -31,6 +32,7 @@ var is_hurt: bool = false
 @export var max_health = 3
 var health = 3
 var is_alive = true
+
 
 # Status flags
 var is_frozen = false
@@ -142,13 +144,58 @@ func _start_attack():
 	attack_timer.start(attack_cooldown)
 	
 # ========================
-# Health Functions
+# Health Functions	
 # ========================
 func _ready():
+	# 每次进入新关卡就回血
 	health = max_health
-	set_physics_process(true) # ensure physics is active
-	print("Player ready")
+	is_alive = true
+	set_physics_process(true)
+
+	if hearts_ui:
+		hearts_ui.update_hearts(health)
+	print("Player ready, health reset to full")
+
 	
+#func _ready():
+	#health = max_health
+	#set_physics_process(true) # ensure physics is active
+	#hearts_ui = get_tree().root.get_node("Heart_ui")
+	#hearts_ui.update_hearts(health)
+	#print("Player ready")
+	
+#func take_damage(amount: int = 1):
+	#if invulnerable or not is_alive:
+		#return
+#
+	#health -= amount
+	#print("Player health:", health)
+	#
+	#if hearts_ui:
+		#hearts_ui.update_hearts(health)
+#
+	#if health <= 0:
+		#game_over()
+		#return
+	#if health > 0:
+		## Enter hurt state
+		#is_hurt = true
+		#invulnerable = true
+		#invuln_timer.start(invuln_time)
+#
+		#velocity.x = 0  # stop moving instantly
+		#animated_sprite.play("Hurt")
+#
+		## Release stun after short delay
+		#await get_tree().create_timer(hurt_stun_time).timeout
+		#is_hurt = false
+#
+		## Only reset if still alive
+		#if is_alive:
+			#animated_sprite.play("Idle")
+	#else:
+		#die()
+
 func take_damage(amount: int = 1):
 	if invulnerable or not is_alive:
 		return
@@ -156,31 +203,49 @@ func take_damage(amount: int = 1):
 	health -= amount
 	print("Player health:", health)
 
+	# 更新 UI（爱心显示 empty）
+	if hearts_ui:
+		hearts_ui.update_hearts(health)
+
 	if health > 0:
-		# Enter hurt state
+		# 进入受伤状态
 		is_hurt = true
 		invulnerable = true
 		invuln_timer.start(invuln_time)
 
-		velocity.x = 0  # stop moving instantly
+		velocity.x = 0  # 停止移动
 		animated_sprite.play("Hurt")
 
-		# Release stun after short delay
+		# 短时间眩晕
 		await get_tree().create_timer(hurt_stun_time).timeout
 		is_hurt = false
 
-		# Only reset if still alive
 		if is_alive:
 			animated_sprite.play("Idle")
-	else:
+
+	elif health <= 0:
+		# 玩家死亡流程
 		die()
 
 
 func die():
+	if not is_alive:
+		return
 	is_alive = false
 	animated_sprite.play("Die")
 	set_physics_process(false)
 	print("Player died")
+	
+	await animated_sprite.animation_finished
+	game_over()
+
+func game_over():
+	is_alive = false
+	animated_sprite.play("Die")
+	set_physics_process(false)
+
+	var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
+	get_tree().root.add_child(game_over_scene)
 
 # ========================
 # Status Effects Functions

@@ -245,7 +245,41 @@ texture = SubResource("AnimatedTexture_p7b0h")
 layout_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("26_xg5g8")]
+<<<<<<< HEAD
 position = Vector2(9, 9.00001)
+=======
+visible = false
+position = Vector2(320, 155)
+walk_speed = 150.0
+run_speed = 350.0
+crouch_speed = 80.0
+icy_acceleration = 0.2
+stomp_bounce_force = -450.0
+attack_cooldown = 0.25
+invuln_time = 0.7
+acceleration = 0.1
+deceleration = 0.1
+jump_force = -600.0
+decelerate_on_jump_release = 0.3
+hurt_stun_time = 0.4
+max_health = 3
+
+[node name="Player2" parent="." instance=ExtResource("26_xg5g8")]
+position = Vector2(1.99997, 59)
+walk_speed = 150.0
+run_speed = 350.0
+crouch_speed = 80.0
+icy_acceleration = 0.2
+stomp_bounce_force = -450.0
+attack_cooldown = 0.25
+invuln_time = 0.7
+acceleration = 0.1
+deceleration = 0.1
+jump_force = -600.0
+decelerate_on_jump_release = 0.3
+hurt_stun_time = 0.4
+max_health = 3
+>>>>>>> b77b5774a43356c72f2f4f07d0edfc717160f46a
 
 [node name="obstacles" type="Node" parent="."]
 
@@ -261,7 +295,7 @@ position = Vector2(277, 190)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer2" instance=ExtResource("28_g50tq")]
-offset_left = 9.0
-offset_top = -9.0
-offset_right = 9.0
-offset_bottom = -9.0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 7.0
+offset_bottom = 9.0

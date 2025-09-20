@@ -503,7 +503,7 @@ one_shot = true
 position = Vector2(985.573, 664.176)
 scale = Vector2(0.283206, -8.9227)
 process_callback = 0
-limit_bottom = 760
+limit_bottom = 700
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 

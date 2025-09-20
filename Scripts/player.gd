@@ -19,7 +19,7 @@ extends CharacterBody2D
 @export var invuln_time = 0.7               # after hurt, can’t be hit again
 @export_range(0, 1) var acceleration = 0.1
 @export_range(0, 1) var deceleration = 0.1
-@export var jump_force = -600.0
+@export var jump_force = -900.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.3
 @export var hurt_stun_time := 0.4  # seconds player is stunned after hit
 

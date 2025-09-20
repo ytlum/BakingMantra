@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bdjwctt8wx6jp"]
+
+[ext_resource type="Script" uid="uid://6tht4gh7g442" path="res://Inventory/Script/inventory_item.gd" id="1_o35kh"]
+[ext_resource type="Texture2D" uid="uid://bo4hxoelwh50g" path="res://Background/how-to-make-pixel-art-candy-7-removebg-preview.png" id="2_gmcni"]
+
+[resource]
+script = ExtResource("1_o35kh")
+name = "Candy"
+texture = ExtResource("2_gmcni")
+metadata/_custom_type_script = "uid://6tht4gh7g442"

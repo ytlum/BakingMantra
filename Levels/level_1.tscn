@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dfjk4t6ihcejd" path="res://Obstacles/vegetables_spawner.tscn" id="27_p7b0h"]
 [ext_resource type="PackedScene" uid="uid://dm1c5v3m8f0kk" path="res://Obstacles/spilled_oil.tscn" id="28_2i07x"]
 [ext_resource type="PackedScene" uid="uid://cbfghflex5gm8" path="res://UI/start_menu.tscn" id="28_g50tq"]
-[ext_resource type="PackedScene" path="res://Items/flour.tscn" id="29_g50tq"]
+[ext_resource type="PackedScene" uid="uid://bmegw36m512" path="res://Items/flour.tscn" id="29_g50tq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfnuo"]
 texture = ExtResource("1_5j5gb")
@@ -245,11 +245,7 @@ texture = SubResource("AnimatedTexture_p7b0h")
 layout_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("26_xg5g8")]
-visible = false
-position = Vector2(320, 155)
-
-[node name="Player2" parent="." instance=ExtResource("26_xg5g8")]
-position = Vector2(1.99997, 59)
+position = Vector2(9, 9.00001)
 
 [node name="obstacles" type="Node" parent="."]
 

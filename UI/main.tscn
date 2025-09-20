@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://byell8p2ekuwv"]
+[gd_scene load_steps=10 format=3 uid="uid://byell8p2ekuwv"]
 
 [ext_resource type="Script" uid="uid://d24nxfpv56xry" path="res://Scripts/main.gd" id="1_e5ruq"]
-[ext_resource type="Texture2D" uid="uid://cdc30q3viiel7" path="res://assets/UI/background.jpg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bd2wx7qegyo63" path="res://assets/UI/background.jpg" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://m81rovohfuf1" path="res://Scripts/music_player.gd" id="2_fmhtc"]
-[ext_resource type="Texture2D" uid="uid://cux42ev2lk56r" path="res://assets/UI/TransitionEndBig.svg" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://x60uu3ci7acp" path="res://assets/UI/TransitionEndBig.svg" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://citrycud7abrk" path="res://Scripts/playbutton.gd" id="4_6sydh"]
 [ext_resource type="Texture2D" uid="uid://dlqknpxhf5gob" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Rect-Text-Play/Red-Idle.png" id="6_5vw27"]
-[ext_resource type="Script" uid="uid://ermtimymjdu1" path="res://Scripts/settings_icon.gd" id="6_eto42"]
-[ext_resource type="Texture2D" uid="uid://jgqtqg56spca" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Gear-Idle.png" id="7_kek77"]
 [ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="8_4c57u"]
 [ext_resource type="Script" uid="uid://cxrbby0h30mkq" path="res://Scripts/pause.gd" id="8_dk31d"]
+[ext_resource type="PackedScene" uid="uid://ccjlpk2pffpow" path="res://UI/setting.tscn" id="9_e5ruq"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_e5ruq")
@@ -48,15 +47,17 @@ scale = Vector2(1.11842, 1)
 texture = ExtResource("6_5vw27")
 script = ExtResource("4_6sydh")
 
-[node name="setting" type="Sprite2D" parent="Node2D"]
-position = Vector2(1224, 50)
-scale = Vector2(1.11842, 1)
-texture = ExtResource("7_kek77")
-script = ExtResource("6_eto42")
-
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 visible = false
 position = Vector2(1225, 136)
 scale = Vector2(1.11842, 1)
 texture = ExtResource("8_4c57u")
 script = ExtResource("8_dk31d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control2" parent="CanvasLayer" instance=ExtResource("9_e5ruq")]
+offset_left = -6.0
+offset_top = 10.0
+offset_right = -6.0
+offset_bottom = 10.0

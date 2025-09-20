@@ -12,5 +12,6 @@ func update_hearts(current_health: int):
 		if i < current_health:
 			hearts[i].texture = heart_full
 		else:
-			hearts[i].texture = heart_empty
-	print("UI updated to: ", current_health)  # debug
+
+			hearts[i].play("Empty")  # 没血
+			

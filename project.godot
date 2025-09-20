@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="BakingMantra"
-run/main_scene="uid://b7kvt1x4oltwp"
+run/main_scene="uid://byell8p2ekuwv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MusicManager="*res://Scripts/MusicManager.gd"
 
 [display]
 

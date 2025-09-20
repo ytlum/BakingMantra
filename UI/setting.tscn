@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccjlpk2pffpow"]
+
+[ext_resource type="Script" uid="uid://bg131fq30kbwu" path="res://Scripts/Settings.gd" id="1_7dmh7"]
+[ext_resource type="Texture2D" uid="uid://bkxutp1t0hdyp" path="res://assets/UI/setting.png" id="2_irhm8"]
+[ext_resource type="Texture2D" uid="uid://jgqtqg56spca" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Gear-Idle.png" id="3_ymdbj"]
+[ext_resource type="Script" path="res://Scripts/save_button.gd" id="4_36jyd"]
+
+[node name="Control2" type="Control"]
+process_mode = 3
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7dmh7")
+
+[node name="PanelBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = -1.0
+offset_right = 1095.0
+offset_bottom = 787.0
+texture = ExtResource("2_irhm8")
+
+[node name="BGM_Slider" type="HSlider" parent="."]
+offset_left = 501.0
+offset_top = 283.0
+offset_right = 759.0
+offset_bottom = 299.0
+value = 50.0
+
+[node name="SFX_Slider" type="HSlider" parent="."]
+offset_left = 502.0
+offset_top = 344.0
+offset_right = 759.0
+offset_bottom = 440.0
+
+[node name="SoundLabel" type="Label" parent="."]
+offset_left = 497.0
+offset_top = 315.0
+offset_right = 657.0
+offset_bottom = 344.0
+theme_override_font_sizes/font_size = 20
+text = "Sound Volume:"
+
+[node name="BGMLabel" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 243.0
+offset_right = 658.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 20
+text = "BGM Volume:"
+
+[node name="SettingButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 9.0
+offset_right = 1262.0
+offset_bottom = 75.0
+texture_normal = ExtResource("3_ymdbj")
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 542.0
+offset_top = 433.0
+offset_right = 711.0
+offset_bottom = 478.0
+text = "Save"
+script = ExtResource("4_36jyd")

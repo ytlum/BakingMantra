@@ -1267,7 +1267,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_eojs8")
 }],
 "loop": true,
-"name": &"Platform",
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -1470,7 +1470,7 @@ script = ExtResource("65_sted3")
 position = Vector2(460, 257)
 scale = Vector2(2.07813, 2.7)
 sprite_frames = SubResource("SpriteFrames_l013c")
-animation = &"Platform"
+animation = &"idle"
 
 [node name="DetectionArea" type="Area2D" parent="Dropping platform"]
 
@@ -1490,7 +1490,7 @@ script = ExtResource("65_sted3")
 position = Vector2(460, 257)
 scale = Vector2(2.07813, 2.7)
 sprite_frames = SubResource("SpriteFrames_l013c")
-animation = &"Platform"
+animation = &"idle"
 
 [node name="DetectionArea" type="Area2D" parent="Dropping platform2"]
 

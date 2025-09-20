@@ -4,7 +4,7 @@ extends Control
 @onready var return_button = $ReturnButton
 @onready var exit_button = $ExitButton
 @onready var challenge_button = $ChallengeButton
-@onready var panel_bg = $PanelBG   # 新加的背景
+@onready var panel_bg = $PanelBGI   # 新加的背景
 
 func _ready():
 	# 默认隐藏背景和按钮

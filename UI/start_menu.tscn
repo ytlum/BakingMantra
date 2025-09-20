@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q5qyg")
 
-[node name="PanelBG" type="TextureRect" parent="."]
+[node name="PanelBGI" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 155.0
 offset_top = -1.0

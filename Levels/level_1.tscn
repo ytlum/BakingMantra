@@ -216,7 +216,6 @@ scale = Vector2(1.08417, 1)
 texture = ExtResource("3_4qcx6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="HeartsUI" parent="CanvasLayer" instance=ExtResource("29_yegjp")]
 light_mask = 2

@@ -45,6 +45,16 @@ size = Vector2(553, 95)
 [node name="Level3_SnowCake" type="Node2D"]
 position = Vector2(77, -24)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsUI" parent="CanvasLayer" instance=ExtResource("18_1yi2b")]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("17_wtqdv")]
+offset_left = 11.0
+offset_top = 91.0
+offset_right = 11.0
+offset_bottom = 91.0
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(563, 384)
 scale = Vector2(0.666667, 0.666667)
@@ -326,13 +336,3 @@ jump_force = -900.0
 decelerate_on_jump_release = 0.3
 hurt_stun_time = 0.4
 max_health = 3
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HeartsUI" parent="CanvasLayer" instance=ExtResource("18_1yi2b")]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("17_wtqdv")]
-offset_left = -5.0
-offset_top = 0.0
-offset_right = -5.0
-offset_bottom = 0.0

@@ -51,6 +51,7 @@ var jump_sfx = preload("res://assets/audio/jump.mp3")
 var attack_sfx = preload("res://assets/audio/attack.mp3")
 var walk_sfx = preload("res://assets/audio/walk.mp3")
 var hurt_sfx = preload("res://assets/audio/hurt.mp3")
+var die_sfx = preload("res://assets/audio/die.mp3")
 	
 
 
@@ -252,19 +253,21 @@ func die():
 	animated_sprite.play("Die")
 	set_physics_process(false)
 	print("Player died")
-	
+	MusicManager.play_sfx(die_sfx)
+
 	await animated_sprite.animation_finished
 	
+	var current_scene = get_tree().current_scene
 	var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
-	get_tree().root.add_child(game_over_scene)
+	current_scene.add_child(game_over_scene)
 
-func game_over():
-	is_alive = false
-	animated_sprite.play("Die")
-	set_physics_process(false)
-
-	var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
-	get_tree().root.add_child(game_over_scene)
+#func game_over():
+	#is_alive = false
+	#animated_sprite.play("Die")
+	#set_physics_process(false)
+#
+	#var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
+	#get_tree().root.add_child(game_over_scene)
 
 # ========================
 # Status Effects Functions

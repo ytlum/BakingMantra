@@ -19,7 +19,7 @@ func _ready():
 	if contact_damage_area:
 		contact_damage_area.body_entered.connect(_on_contact_damage_body_entered)
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if health <= 0:
 		return
 		

@@ -58,7 +58,7 @@ texture = ExtResource("1_4t7ew")
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="snow cone slime" parent="Enemies" instance=ExtResource("1_absw3")]
-position = Vector2(689, 484)
+position = Vector2(1193, 484)
 
 [node name="Ground" type="StaticBody2D" parent="."]
 script = ExtResource("2_padch")
@@ -227,7 +227,7 @@ scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("11_88iqf")
 
 [node name="Sprite2D28" type="Sprite2D" parent="Ground"]
-position = Vector2(544.892, 390.6)
+position = Vector2(543, 390)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("12_5wr1k")
 
@@ -299,14 +299,23 @@ texture = ExtResource("5_oojpf")
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="CandyIcicle" parent="Obstacles" instance=ExtResource("3_uwxw1")]
-position = Vector2(219, 320)
+position = Vector2(257, 319)
 
 [node name="CandyIcicle2" parent="Obstacles" instance=ExtResource("3_uwxw1")]
-position = Vector2(975, 207)
+position = Vector2(845, 205)
+
+[node name="CandyIcicle3" parent="Obstacles" instance=ExtResource("3_uwxw1")]
+position = Vector2(1131, 207)
 
 [node name="Collectibles" type="Node2D" parent="."]
 
 [node name="Berry" parent="Collectibles" instance=ExtResource("16_5wr1k")]
+
+[node name="Berry2" parent="Collectibles" instance=ExtResource("16_5wr1k")]
+position = Vector2(602, -70)
+
+[node name="Berry3" parent="Collectibles" instance=ExtResource("16_5wr1k")]
+position = Vector2(757, 221)
 
 [node name="Player" parent="." instance=ExtResource("13_7cdb2")]
 position = Vector2(-82, 20)

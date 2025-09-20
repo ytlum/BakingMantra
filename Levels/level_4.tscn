@@ -61,7 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://iynmtetvhr84" path="res://assets/level4/Enemy/S_Walk.png" id="56_8ahtm"]
 [ext_resource type="Texture2D" uid="uid://be3gjtf77rube" path="res://assets/level4/Background/doors.png" id="57_8ahtm"]
 [ext_resource type="Texture2D" uid="uid://dkjp0vigrp4s7" path="res://assets/level4/Background/7621d12646dc99e350c6b7230a8929fd-removebg-preview.png" id="57_i8qc6"]
-[ext_resource type="Script" path="res://Scripts/honey_bee.gd" id="58_6ownd"]
+[ext_resource type="Script" uid="uid://6fjhssou0uyl" path="res://Scripts/honey_bee.gd" id="58_6ownd"]
 [ext_resource type="Texture2D" uid="uid://dq3tcwsw0dycf" path="res://assets/level4/Background/Lucid_Origin_Vibrant_pixel_art_image_of_intricately_designed_g_1-removebg-preview.png" id="59_yi26j"]
 [ext_resource type="Texture2D" uid="uid://bo4hxoelwh50g" path="res://assets/level4/Background/how-to-make-pixel-art-candy-7-removebg-preview.png" id="60_y4h4i"]
 [ext_resource type="Texture2D" uid="uid://bbytilpkmgcye" path="res://assets/level4/Background/On (32x10).png" id="62_yi26j"]
@@ -1089,6 +1089,86 @@ radius = 36.0139
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_874d3"]
 size = Vector2(75, 61.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_874d3"]
+radius = 28.0179
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ownd"]
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sted3"]
+radius = 29.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmia1"]
+atlas = ExtResource("57_8ahtm")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bgf6"]
+atlas = ExtResource("57_8ahtm")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrku2"]
+atlas = ExtResource("57_8ahtm")
+region = Rect2(64, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ss7cl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmia1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bgf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrku2")
+}],
+"loop": true,
+"name": &"Door",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss7cl"]
+atlas = ExtResource("62_yi26j")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngx5p"]
+atlas = ExtResource("62_yi26j")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfpo2"]
+atlas = ExtResource("62_yi26j")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eojs8"]
+atlas = ExtResource("62_yi26j")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l013c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss7cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngx5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfpo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eojs8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sted3"]
+size = Vector2(66, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y54eq"]
+size = Vector2(66, 27)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0rrql"]
 radius = 21.0
 height = 44.0
@@ -1197,86 +1277,6 @@ height = 48.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ownd"]
 size = Vector2(49, 25)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_874d3"]
-radius = 28.0179
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6ownd"]
-radius = 35.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sted3"]
-radius = 29.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cmia1"]
-atlas = ExtResource("57_8ahtm")
-region = Rect2(0, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5bgf6"]
-atlas = ExtResource("57_8ahtm")
-region = Rect2(32, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrku2"]
-atlas = ExtResource("57_8ahtm")
-region = Rect2(64, 32, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ss7cl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cmia1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5bgf6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrku2")
-}],
-"loop": true,
-"name": &"Door",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ss7cl"]
-atlas = ExtResource("62_yi26j")
-region = Rect2(0, 0, 32, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngx5p"]
-atlas = ExtResource("62_yi26j")
-region = Rect2(32, 0, 32, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfpo2"]
-atlas = ExtResource("62_yi26j")
-region = Rect2(96, 0, 32, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eojs8"]
-atlas = ExtResource("62_yi26j")
-region = Rect2(64, 0, 32, 10)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l013c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ss7cl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngx5p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gfpo2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eojs8")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sted3"]
-size = Vector2(66, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y54eq"]
-size = Vector2(66, 27)
-
 [node name="Level4" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -1324,63 +1324,6 @@ texture = ExtResource("54_yrhmp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncy marshmellow"]
 position = Vector2(992.5, 658.25)
 shape = SubResource("RectangleShape2D_874d3")
-
-[node name="Bees" type="Node2D" parent="."]
-position = Vector2(-226, 447)
-
-[node name="honey bee" type="CharacterBody2D" parent="Bees"]
-position = Vector2(205, -480)
-motion_mode = 1
-script = ExtResource("58_6ownd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee"]
-position = Vector2(1030, 93)
-shape = SubResource("CapsuleShape2D_0rrql")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bees/honey bee"]
-position = Vector2(1029, 77)
-scale = Vector2(2.39583, 2.58333)
-sprite_frames = SubResource("SpriteFrames_tkwfe")
-animation = &"death"
-
-[node name="ContactDamage" type="Area2D" parent="Bees/honey bee"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee/ContactDamage"]
-position = Vector2(1030, 98)
-shape = SubResource("CapsuleShape2D_ei8qt")
-
-[node name="StompDetection" type="Area2D" parent="Bees/honey bee"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee/StompDetection"]
-position = Vector2(1030.5, 64.5)
-shape = SubResource("RectangleShape2D_6ownd")
-
-[node name="honey bee2" type="CharacterBody2D" parent="Bees"]
-position = Vector2(-580, -456)
-motion_mode = 1
-script = ExtResource("58_6ownd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee2"]
-position = Vector2(1030, 93)
-shape = SubResource("CapsuleShape2D_0rrql")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bees/honey bee2"]
-position = Vector2(1029, 77)
-scale = Vector2(2.39583, 2.58333)
-sprite_frames = SubResource("SpriteFrames_tkwfe")
-animation = &"death"
-
-[node name="ContactDamage" type="Area2D" parent="Bees/honey bee2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee2/ContactDamage"]
-position = Vector2(1030, 98)
-shape = SubResource("CapsuleShape2D_ei8qt")
-
-[node name="StompDetection" type="Area2D" parent="Bees/honey bee2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee2/StompDetection"]
-position = Vector2(1030.5, 64.5)
-shape = SubResource("RectangleShape2D_6ownd")
 
 [node name="Collectibles" type="Node2D" parent="."]
 
@@ -1481,6 +1424,63 @@ shape = SubResource("RectangleShape2D_sted3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform"]
 position = Vector2(460, 256.5)
 shape = SubResource("RectangleShape2D_y54eq")
+
+[node name="Bees" type="Node2D" parent="Dropping platform"]
+position = Vector2(-138, 993)
+
+[node name="honey bee" type="CharacterBody2D" parent="Dropping platform/Bees"]
+position = Vector2(205, -480)
+motion_mode = 1
+script = ExtResource("58_6ownd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform/Bees/honey bee"]
+position = Vector2(1030, 93)
+shape = SubResource("CapsuleShape2D_0rrql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Dropping platform/Bees/honey bee"]
+position = Vector2(1029, 77)
+scale = Vector2(2.39583, 2.58333)
+sprite_frames = SubResource("SpriteFrames_tkwfe")
+animation = &"death"
+
+[node name="ContactDamage" type="Area2D" parent="Dropping platform/Bees/honey bee"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform/Bees/honey bee/ContactDamage"]
+position = Vector2(1030, 98)
+shape = SubResource("CapsuleShape2D_ei8qt")
+
+[node name="StompDetection" type="Area2D" parent="Dropping platform/Bees/honey bee"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform/Bees/honey bee/StompDetection"]
+position = Vector2(1030.5, 64.5)
+shape = SubResource("RectangleShape2D_6ownd")
+
+[node name="honey bee2" type="CharacterBody2D" parent="Dropping platform/Bees"]
+position = Vector2(-580, -456)
+motion_mode = 1
+script = ExtResource("58_6ownd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform/Bees/honey bee2"]
+position = Vector2(1030, 93)
+shape = SubResource("CapsuleShape2D_0rrql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Dropping platform/Bees/honey bee2"]
+position = Vector2(1029, 77)
+scale = Vector2(2.39583, 2.58333)
+sprite_frames = SubResource("SpriteFrames_tkwfe")
+animation = &"death"
+
+[node name="ContactDamage" type="Area2D" parent="Dropping platform/Bees/honey bee2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform/Bees/honey bee2/ContactDamage"]
+position = Vector2(1030, 98)
+shape = SubResource("CapsuleShape2D_ei8qt")
+
+[node name="StompDetection" type="Area2D" parent="Dropping platform/Bees/honey bee2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform/Bees/honey bee2/StompDetection"]
+position = Vector2(1030.5, 64.5)
+shape = SubResource("RectangleShape2D_6ownd")
 
 [node name="Dropping platform2" type="StaticBody2D" parent="."]
 position = Vector2(546, -92)

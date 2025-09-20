@@ -139,9 +139,10 @@ func collect_item(item_name):
 # ========================
 func _start_attack():
 	attacking = true
-	attackhitbox.disabled = false
+	attackhitbox.disabled = false   # Enable the collision
 	animated_sprite.play("Attack")
 	attack_timer.start(attack_cooldown)
+
 	
 # ========================
 # Health Functions	
@@ -339,9 +340,9 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("honeybee"):
-		if area.has_method("take_damage"):
-			area.take_damage(1)
-		print("Killed the honeybee!")
+		if area.has_method("die"):
+			area.die()
+		print("honey bee died")
 
 func _on_footbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("stompable"):

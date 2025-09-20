@@ -457,7 +457,7 @@ animations = [{
 size = Vector2(93.6448, 152.705)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j2ni"]
-size = Vector2(76.5714, 150.865)
+size = Vector2(144.448, 255.735)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0k0e"]
 size = Vector2(69.0822, 40.8765)
@@ -488,7 +488,8 @@ shape = SubResource("RectangleShape2D_j23h2")
 monitoring = false
 
 [node name="AttackboxShape" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(291.444, 876.117)
+position = Vector2(325.382, 869.315)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0j2ni")
 
 [node name="Footbox" type="Area2D" parent="."]

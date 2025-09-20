@@ -15,3 +15,4 @@ func update_hearts(health: int):
 			hearts[i].play("Full")   # 有血
 		else:
 			hearts[i].play("Empty")  # 没血
+			

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxljq01km86pd"]
+[gd_scene load_steps=19 format=3 uid="uid://bxljq01km86pd"]
 
 [ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://8x1hhvyp1kaj" path="res://assets/background/bg_0.png" id="11_lmqi1"]
 [ext_resource type="Texture2D" uid="uid://ptdgj1t38bqu" path="res://assets/background/bg_1.png" id="12_5yfph"]
 [ext_resource type="Texture2D" uid="uid://bre8kfd0xh5ri" path="res://assets/background/bg_2.png" id="13_w6yvm"]
+[ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="15_w6yvm"]
+[ext_resource type="Script" path="res://Scripts/pause.gd" id="16_jcvcn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -495,3 +497,9 @@ position = Vector2(665, 330)
 
 [node name="flying fork spawner" parent="." instance=ExtResource("10_rp5ft")]
 position = Vector2(341, 528)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(831, 287)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("15_w6yvm")
+script = ExtResource("16_jcvcn")

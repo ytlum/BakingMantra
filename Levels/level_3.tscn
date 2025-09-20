@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://b7kvt1x4oltwp"]
+[gd_scene load_steps=26 format=3 uid="uid://b7kvt1x4oltwp"]
 
 [ext_resource type="Texture2D" uid="uid://jje0ail0ewrj" path="res://assets/level3/background/BG_01.png" id="1_4t7ew"]
 [ext_resource type="PackedScene" uid="uid://ckttdx1x26koy" path="res://Enemies/snow_cone_slime.tscn" id="1_absw3"]
-[ext_resource type="Script" uid="uid://bks06pcavt5kn" path="res://Scripts/ground.gd" id="2_padch"]
 [ext_resource type="PackedScene" uid="uid://codyvdlyk66pe" path="res://Obstacles/candy_icicle.tscn" id="3_uwxw1"]
 [ext_resource type="Texture2D" uid="uid://cwg6kblqx58re" path="res://assets/level3/background/snow_54.png" id="5_oojpf"]
 [ext_resource type="Texture2D" uid="uid://chukiahiddgrh" path="res://assets/level3/background/snow_55.png" id="6_7cdb2"]
@@ -62,7 +61,6 @@ texture = ExtResource("1_4t7ew")
 position = Vector2(1126, 484)
 
 [node name="Ground" type="StaticBody2D" parent="."]
-script = ExtResource("2_padch")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground"]
 position = Vector2(1481, 601.5)

@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b06gry46gcwmr"]
+[gd_scene load_steps=9 format=3 uid="uid://b06gry46gcwmr"]
 
+[ext_resource type="PackedScene" uid="uid://ccjlpk2pffpow" path="res://UI/setting.tscn" id="1_3rqha"]
 [ext_resource type="Texture2D" uid="uid://cmvyb1urupdc0" path="res://assets/UI/levelselectorbg.png" id="1_bbdif"]
 [ext_resource type="Texture2D" uid="uid://bulj7jd5271i5" path="res://assets/UI/flying-islands-sweet-land-with-candies.png" id="2_b0b4q"]
 [ext_resource type="Texture2D" uid="uid://c6yxi6mvowl5i" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Dummy/Sqaure-Icon-Red/Idle.png" id="3_82b6w"]
-[ext_resource type="Script" path="res://Scripts/level_1.gd" id="4_rd4go"]
-[ext_resource type="Script" path="res://Scripts/level_2.gd" id="5_r4dpt"]
-[ext_resource type="Script" path="res://Scripts/level_3.gd" id="6_wnd8j"]
+[ext_resource type="Script" uid="uid://cjouod4e8s0xd" path="res://Scripts/level_1.gd" id="4_rd4go"]
+[ext_resource type="Script" uid="uid://barl7xk0tby84" path="res://Scripts/level_2.gd" id="5_r4dpt"]
+[ext_resource type="Script" uid="uid://dcplrhri04oev" path="res://Scripts/level_3.gd" id="6_wnd8j"]
+[ext_resource type="Script" uid="uid://bcfuekgojivut" path="res://Scripts/level_4.gd" id="7_pix6d"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -18,6 +20,13 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control2" parent="CanvasLayer2" instance=ExtResource("1_3rqha")]
+offset_left = 6.10352e-05
+offset_top = 8.07684
+offset_bottom = 8.07684
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -94,12 +103,13 @@ vertical_alignment = 1
 position = Vector2(1037, 528)
 scale = Vector2(1.11683, 1.07678)
 texture = ExtResource("3_82b6w")
+script = ExtResource("7_pix6d")
 
 [node name="Label5" type="Label" parent="Node2D2/Sprite2D5"]
-offset_left = -31.3387
-offset_top = -30.6469
-offset_right = 39.6613
-offset_bottom = 30.3531
+offset_left = -36.711
+offset_top = -31.5756
+offset_right = 34.289
+offset_bottom = 29.4244
 theme_override_font_sizes/font_size = 30
 text = "4"
 horizontal_alignment = 1

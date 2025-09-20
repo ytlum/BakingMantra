@@ -34,6 +34,8 @@ var is_hurt: bool = false
 var is_alive = true
 
 
+
+
 # Status flags
 var is_frozen = false
 var is_slowed = false
@@ -42,6 +44,15 @@ var is_slippery = false
 var can_jump = true
 var invulnerable = false
 var attacking = false
+
+
+
+var jump_sfx = preload("res://assets/audio/jump.mp3")
+var attack_sfx = preload("res://assets/audio/attack.mp3")
+var walk_sfx = preload("res://assets/audio/walk.mp3")
+var hurt_sfx = preload("res://assets/audio/hurt.mp3")
+	
+
 
 # ========================
 # Movement Functions
@@ -74,6 +85,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or is_on_wall()) and can_jump:
 		velocity.y = jump_force
 		animated_sprite.play("Jump")
+		MusicManager.play_sfx(jump_sfx)
+
 	
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
@@ -143,12 +156,14 @@ func _start_attack():
 	animated_sprite.play("Attack")
 	attack_timer.start(attack_cooldown)
 
-	
+	MusicManager.play_sfx(attack_sfx)
+
 # ========================
 # Health Functions	
 # ========================
 func _ready():
 	# 每次进入新关卡就回血
+	
 	health = max_health
 	is_alive = true
 	set_physics_process(true)
@@ -216,6 +231,7 @@ func take_damage(amount: int = 1):
 
 		velocity.x = 0  # 停止移动
 		animated_sprite.play("Hurt")
+		MusicManager.play_sfx(hurt_sfx)
 
 		# 短时间眩晕
 		await get_tree().create_timer(hurt_stun_time).timeout

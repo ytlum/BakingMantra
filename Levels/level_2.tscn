@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxljq01km86pd"]
+[gd_scene load_steps=17 format=3 uid="uid://vc6v7fjmjjk6"]
 
 [ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cg1yidv5m0bge" path="res://assets/level2/bigflowers_props.png" id="6_fbld2"]
 [ext_resource type="Texture2D" uid="uid://c6ffmrel6tq43" path="res://assets/level2/flowers_props.png" id="7_pml6m"]
 [ext_resource type="Texture2D" uid="uid://bwj0ubalckk26" path="res://assets/level2/door.png" id="8_vltsr"]
-[ext_resource type="PackedScene" uid="uid://kx25ybvtsr5m" path="res://Obstacles/flying_fork.tscn" id="9_vltsr"]
 [ext_resource type="PackedScene" uid="uid://ci62281a7ciw5" path="res://Obstacles/flying_fork_spawner.tscn" id="10_rp5ft"]
 [ext_resource type="Texture2D" uid="uid://8x1hhvyp1kaj" path="res://assets/background/bg_0.png" id="11_lmqi1"]
 [ext_resource type="Texture2D" uid="uid://ptdgj1t38bqu" path="res://assets/background/bg_1.png" id="12_5yfph"]
 [ext_resource type="Texture2D" uid="uid://bre8kfd0xh5ri" path="res://assets/background/bg_2.png" id="13_w6yvm"]
+[ext_resource type="PackedScene" uid="uid://duo53nqelljcd" path="res://Obstacles/chocolate_lava.tscn" id="14_lmqi1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -493,8 +493,10 @@ position = Vector2(1252, 521)
 scale = Vector2(2.45833, 4.58333)
 texture = ExtResource("8_vltsr")
 
-[node name="flying fork" parent="." instance=ExtResource("9_vltsr")]
-position = Vector2(665, 330)
+[node name="obstacles" type="Node2D" parent="."]
 
-[node name="flying fork spawner" parent="." instance=ExtResource("10_rp5ft")]
-position = Vector2(341, 528)
+[node name="flying fork spawner" parent="obstacles" instance=ExtResource("10_rp5ft")]
+position = Vector2(1332, 434)
+
+[node name="chocolate lava" parent="obstacles" instance=ExtResource("14_lmqi1")]
+position = Vector2(245, 533)

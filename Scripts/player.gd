@@ -238,9 +238,8 @@ func die():
 	
 	await animated_sprite.animation_finished
 	
-var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
-get_tree().current_scene.add_child(game_over_scene)
-
+	var game_over_scene = load("res://UI/GameOver.tscn").instantiate()
+	get_tree().root.add_child(game_over_scene)
 
 func game_over():
 	is_alive = false

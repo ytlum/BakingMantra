@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbfghflex5gm8"]
+[gd_scene load_steps=5 format=3 uid="uid://cbfghflex5gm8"]
 
 [ext_resource type="Texture2D" uid="uid://bv2ngdmk5qh5q" path="res://assets/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0014.png" id="1_jwbto"]
 [ext_resource type="Script" uid="uid://dk64365e2nich" path="res://UI/start_menu.gd" id="1_q5qyg"]
+[ext_resource type="Texture2D" uid="uid://x2x1x8amhgfn" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Buttons/Sqaure-Icon-Red/Levels-Idle.png" id="3_j3hi8"]
+[ext_resource type="Texture2D" uid="uid://2t1ormv1akl2" path="res://assets/UI/menu.png" id="3_neu3s"]
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -10,16 +12,39 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q5qyg")
 
 [node name="Tile0014" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(633.499, 350.875)
 scale = Vector2(15.9062, 12.4297)
 texture = ExtResource("1_jwbto")
+
+[node name="PanelBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 8.0
+offset_right = 1096.0
+offset_bottom = 796.0
+texture = ExtResource("3_neu3s")
+
+[node name="OptionButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -75.0
+offset_top = 16.0
+offset_right = -9.0
+offset_bottom = 82.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_j3hi8")
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 2
@@ -47,17 +72,3 @@ offset_right = 732.499
 offset_bottom = 442.875
 theme_override_font_sizes/font_size = 25
 text = "Exit"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-custom_minimum_size = Vector2(0, 59)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.207
-anchor_bottom = 0.255
-offset_left = 487.0
-offset_top = 182.0
-offset_right = 457.536
-offset_bottom = 195.76
-theme_override_constants/separation = 25
-alignment = 1

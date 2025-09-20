@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bo0xjh1p46h3h"]
 
 [ext_resource type="PackedScene" uid="uid://c5l2g0121i123" path="res://Obstacles/falling_vegetable.tscn" id="1_5e1b1"]
-[ext_resource type="Texture2D" uid="uid://c718bpbrbg8t4" path="res://assets/level1/corn.png" id="2_60tdu"]
+[ext_resource type="Texture2D" uid="uid://c718bpbrbg8t4" path="res://assets/level1/Corn.png" id="2_60tdu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5e1b1"]
 radius = 11.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://kx25ybvtsr5m"]
 
 [ext_resource type="Script" uid="uid://dtodwq7mkhoc" path="res://Scripts/flying_fork.gd" id="1_3nqy0"]
-[ext_resource type="Texture2D" uid="uid://3y7odpsgd8x6" path="res://assets/level2/shot-sword.png" id="1_g6p0j"]
+[ext_resource type="Texture2D" uid="uid://ch46eptuyks86" path="res://assets/level2/knife.png" id="2_3nqy0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3nqy0"]
 radius = 9.0
@@ -11,12 +11,13 @@ height = 100.0
 script = ExtResource("1_3nqy0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(205, 107)
-rotation = 3.14159
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("1_g6p0j")
+position = Vector2(209.338, 123.841)
+rotation = -3.75246
+scale = Vector2(2.62196, 1.76072)
+texture = ExtResource("2_3nqy0")
+flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(205, 107)
+position = Vector2(209, 124)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3nqy0")

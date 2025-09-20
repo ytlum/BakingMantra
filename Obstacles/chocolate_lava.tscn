@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://duo53nqelljcd"]
 
 [ext_resource type="Texture2D" uid="uid://bvo610oen3o7g" path="res://assets/level2/LavaFrame1.png" id="1_jdwaf"]
-[ext_resource type="Script" path="res://Scripts/chocolate_lava.gd" id="1_uulwd"]
+[ext_resource type="Script" uid="uid://dfx2empkb2n3g" path="res://Scripts/chocolate_lava.gd" id="1_uulwd"]
 [ext_resource type="Texture2D" uid="uid://db3mgrxegyycn" path="res://assets/level2/LavaFrame2.png" id="2_uulwd"]
 [ext_resource type="Texture2D" uid="uid://c83mie2rleumf" path="res://assets/level2/LavaFrame3.png" id="3_2ydd1"]
 [ext_resource type="Texture2D" uid="uid://x7ld2ddskp38" path="res://assets/level2/LavaFrame4.png" id="4_1cbyg"]

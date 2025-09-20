@@ -313,24 +313,23 @@ position = Vector2(975, 207)
 
 [node name="Player" parent="." instance=ExtResource("13_7cdb2")]
 position = Vector2(-82, 20)
-walk_speed = null
-run_speed = null
-crouch_speed = null
-icy_acceleration = null
-stomp_bounce_force = null
-attack_cooldown = null
-invuln_time = null
-acceleration = null
-deceleration = null
-jump_force = null
-decelerate_on_jump_release = null
-hurt_stun_time = null
-max_health = null
+walk_speed = 150.0
+run_speed = 350.0
+crouch_speed = 80.0
+icy_acceleration = 0.2
+stomp_bounce_force = -450.0
+attack_cooldown = 0.25
+invuln_time = 0.7
+acceleration = 0.1
+deceleration = 0.1
+jump_force = -900.0
+decelerate_on_jump_release = 0.3
+hurt_stun_time = 0.4
+max_health = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartsUI" parent="CanvasLayer" instance=ExtResource("18_1yi2b")]
-position = Vector2(55, -5)
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("17_wtqdv")]
 offset_left = -5.0

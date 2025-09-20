@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://mrllvy11vatp"]
+
+[ext_resource type="Script" uid="uid://bd5p8onefvv4k" path="res://Scripts/snowball.gd" id="1_ohjsq"]
+[ext_resource type="Texture2D" uid="uid://bggfhah7yla1" path="res://assets/level3/projectiles/snowball.png" id="2_6shkk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ildim"]
+atlas = ExtResource("2_6shkk")
+region = Rect2(0, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrd2k"]
+atlas = ExtResource("2_6shkk")
+region = Rect2(512, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe1ab"]
+atlas = ExtResource("2_6shkk")
+region = Rect2(1024, 0, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qu40"]
+atlas = ExtResource("2_6shkk")
+region = Rect2(0, 385, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08boe"]
+atlas = ExtResource("2_6shkk")
+region = Rect2(512, 385, 512, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kbw3"]
+atlas = ExtResource("2_6shkk")
+region = Rect2(1024, 385, 512, 385)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jpr88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ildim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrd2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe1ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qu40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08boe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kbw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6shkk"]
+size = Vector2(71, 63)
+
+[node name="Snowball" type="Area2D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_ohjsq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(385, 299)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_jpr88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(380.5, 300.5)
+shape = SubResource("RectangleShape2D_6shkk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

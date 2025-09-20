@@ -457,19 +457,6 @@ size = Vector2(69.0822, 40.8765)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.651398, 0.543531)
 script = ExtResource("1_5wa8t")
-walk_speed = null
-run_speed = null
-crouch_speed = null
-icy_acceleration = null
-stomp_bounce_force = null
-attack_cooldown = null
-invuln_time = null
-acceleration = null
-deceleration = null
-jump_force = null
-decelerate_on_jump_release = null
-hurt_stun_time = null
-max_health = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(218.431, 876.117)

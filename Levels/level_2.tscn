@@ -397,6 +397,14 @@ sources/0 = SubResource("TileSetAtlasSource_bcgyv")
 
 [node name="Level2" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("15_5yfph")]
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -411,7 +419,7 @@ texture = ExtResource("11_lmqi1")
 motion_mirroring = Vector2(1000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(648, 362)
+position = Vector2(647, 336)
 scale = Vector2(5.4, 4.425)
 texture = ExtResource("12_5yfph")
 
@@ -492,6 +500,7 @@ scale = Vector2(2.45833, 4.58333)
 texture = ExtResource("8_vltsr")
 
 [node name="obstacles" type="Node2D" parent="."]
+position = Vector2(-3, -27)
 
 [node name="flying fork spawner" parent="obstacles" instance=ExtResource("10_rp5ft")]
 position = Vector2(567, 195)
@@ -513,12 +522,3 @@ position = Vector2(2574, 42)
 
 [node name="flying fork2" parent="obstacles" instance=ExtResource("14_5yfph")]
 position = Vector2(976, 83)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" parent="CanvasLayer" instance=ExtResource("15_5yfph")]
-visible = false
-offset_left = -1.0
-offset_top = 2.0
-offset_right = -1.0
-offset_bottom = 2.0

@@ -57,12 +57,6 @@ texture = ExtResource("1_4t7ew")
 
 [node name="snow cone slime" parent="Enemies" instance=ExtResource("1_absw3")]
 position = Vector2(1126, 484)
-health = 3
-move_speed = 60.0
-contact_damage = 1
-attack_damage = 1
-attack_range = 100.0
-attack_cooldown = 2.0
 
 [node name="Ground" type="StaticBody2D" parent="."]
 script = ExtResource("2_padch")

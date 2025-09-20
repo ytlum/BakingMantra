@@ -9,12 +9,11 @@ extends CharacterBody2D
 
 var player_ref = null
 var is_active := true
-var direction := 1
+var direction := 1  # Start moving RIGHT
 var can_attack := true
 var is_dead := false
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var activation_area = $ActivationArea  # Reference to the Area2D
 
 func _ready():
 	# Add to groups
@@ -24,20 +23,9 @@ func _ready():
 	# Make sure sprite faces right by default
 	animated_sprite.flip_h = false
 	
-	# Connect signals manually if not connected in editor
-	if activation_area:
-		if not activation_area.body_entered.is_connected(_on_activation_area_body_entered):
-			activation_area.body_entered.connect(_on_activation_area_body_entered)
-		if not activation_area.body_exited.is_connected(_on_activation_area_body_exited):
-			activation_area.body_exited.connect(_on_activation_area_body_exited)
-		
-		print("ActivationArea found and signals connected")
-	else:
-		print("ERROR: ActivationArea node not found!")
-	
 	# Start walking immediately
 	animated_sprite.play("walk")
-	print("Slime spawned - Looking for player...")
+	print("Slime spawned - Ready to attack!")
 
 func _physics_process(delta):
 	if is_dead:
@@ -61,32 +49,105 @@ func _physics_process(delta):
 	# Change direction if hitting wall
 	if is_on_wall():
 		direction *= -1
+		print("Slime hit wall, changing direction")
 	
-	# DEBUG: Print player detection info
-	if Engine.get_frames_drawn() % 120 == 0: # Every 2 seconds
-		print("Slime status - Player ref: ", player_ref != null)
-		if activation_area:
-			var bodies = activation_area.get_overlapping_bodies()
-			print("Bodies in ActivationArea: ", bodies.size())
-			for body in bodies:
-				print("Body in area: ", body.name, " | Is player: ", body.is_in_group("player"))
+	# DEBUG: Print attack info
+	if Engine.get_frames_drawn() % 60 == 0: # Every second
+		if player_ref:
+			var distance = global_position.distance_to(player_ref.global_position)
+			print("Distance to player: ", distance, " | Attack range: ", attack_range)
+			print("Can attack: ", can_attack, " | Player ref: ", player_ref != null)
 	
 	# Attack player if in range
-	if player_ref and can_attack:
+	if player_ref and can_attack and is_active:
 		var distance_to_player = global_position.distance_to(player_ref.global_position)
 		if distance_to_player < attack_range:
 			_attack_player()
 
+func _attack_player():
+	if not can_attack or is_dead:
+		return
+		
+	print("Starting attack sequence!")
+	
+	can_attack = false
+	var previous_velocity = velocity.x
+	velocity.x = 0  # Stop moving during attack
+	
+	# Play attack animation
+	if animated_sprite.has_animation("attack"):
+		print("Playing attack animation")
+		animated_sprite.play("attack")
+	else:
+		print("No attack animation found, using walk instead")
+		animated_sprite.play("walk")
+	
+	# Apply damage to player
+	if player_ref and player_ref.has_method("take_damage"):
+		print("Applying damage to player")
+		player_ref.take_damage(attack_damage)
+	
+	# Wait for attack animation to finish
+	if animated_sprite.has_animation("attack"):
+		await animated_sprite.animation_finished
+		print("Attack animation finished")
+	
+	# Cooldown before next attack
+	await get_tree().create_timer(attack_cooldown).timeout
+	print("Attack cooldown finished")
+	
+	can_attack = true
+	velocity.x = previous_velocity
+	animated_sprite.play("walk")
+	print("Resuming movement")
+
+func take_damage(amount: int):
+	if is_dead:
+		return
+	
+	health -= amount
+	print("Slime took ", amount, " damage! Health: ", health)
+	
+	# Play hurt animation if available
+	if animated_sprite.has_animation("hurt"):
+		animated_sprite.play("hurt")
+		await animated_sprite.animation_finished
+	else:
+		# Flash effect as fallback
+		modulate = Color.RED
+		await get_tree().create_timer(0.1).timeout
+		modulate = Color.WHITE
+	
+	if health <= 0:
+		die()
+
+func die():
+	if is_dead:
+		return
+	
+	is_dead = true
+	velocity = Vector2.ZERO
+	print("Slime is dying!")
+	
+	# Play death animation
+	if animated_sprite.has_animation("die"):
+		animated_sprite.play("die")
+		await animated_sprite.animation_finished
+	else:
+		await get_tree().create_timer(0.1).timeout
+	
+	# Disable collisions
+	collision_layer = 0
+	collision_mask = 0
+	
+	queue_free()
+
 func _on_activation_area_body_entered(body):
-	print("ActivationArea detected body: ", body.name)
 	if body.is_in_group("player"):
 		player_ref = body
-		print("SUCCESS: Player detected! Slime can now attack")
-	else:
-		print("Body is not player - group check: ", body.is_in_group("player"))
+		print("Player detected! Slime can now attack")
 
 func _on_activation_area_body_exited(body):
-	print("Body left ActivationArea: ", body.name)
 	if body.is_in_group("player"):
 		player_ref = null
 		print("Player left detection area")

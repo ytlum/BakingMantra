@@ -22,6 +22,7 @@ extends CharacterBody2D
 @export var jump_force = -600.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.3
 @export var hurt_stun_time := 0.4  # seconds player is stunned after hit
+@export var inv: Inv
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var inventory = {}

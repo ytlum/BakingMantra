@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c0bee1b0ys7vr"]
+[gd_scene load_steps=72 format=3 uid="uid://c0bee1b0ys7vr"]
 
 [ext_resource type="Script" uid="uid://dtkyfg0cya3cw" path="res://Scripts/player.gd" id="1_5wa8t"]
 [ext_resource type="Texture2D" uid="uid://b14s0hma125sc" path="res://assets/player/Attack_KG_1.png" id="2_5wa8t"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://chgcd157cl3a3" path="res://assets/player/Dashing_KG_1.png" id="4_v0k0e"]
 [ext_resource type="Texture2D" uid="uid://kgnsldsbjgb8" path="res://assets/player/Hurt_KG_1.png" id="6_0j2ni"]
 [ext_resource type="Texture2D" uid="uid://iyoab5kkq356" path="res://assets/player/Frozen_KG_1.png" id="7_5wa8t"]
+[ext_resource type="PackedScene" uid="uid://lvlnmtlldpx" path="res://Inventory/inventory_ui.tscn" id="13_p7tob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
 size = Vector2(62.9416, 154.545)
@@ -459,12 +460,10 @@ scale = Vector2(0.651398, 0.543531)
 script = ExtResource("1_5wa8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(663.957, 261.255)
 shape = SubResource("RectangleShape2D_q3lat")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(666.259, 257.575)
 scale = Vector2(2.08121, 2.48356)
 sprite_frames = SubResource("SpriteFrames_3qydi")
 animation = &"Attack"
@@ -473,20 +472,17 @@ autoplay = "Idle"
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(671.632, 262.174)
 shape = SubResource("RectangleShape2D_j23h2")
 
 [node name="AttackHitbox" type="Area2D" parent="."]
 monitoring = false
 
 [node name="AttackboxShape" type="CollisionShape2D" parent="AttackHitbox"]
-position = Vector2(736.97, 261.255)
 shape = SubResource("RectangleShape2D_0j2ni")
 
 [node name="Footbox" type="Area2D" parent="."]
 
 [node name="FootboxShape" type="CollisionShape2D" parent="Footbox"]
-position = Vector2(663.957, 362.445)
 shape = SubResource("RectangleShape2D_v0k0e")
 
 [node name="InvulnTimer" type="Timer" parent="."]
@@ -498,6 +494,12 @@ shape = SubResource("RectangleShape2D_v0k0e")
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="Inventory UI" parent="." instance=ExtResource("13_p7tob")]
+offset_left = -130.489
+offset_top = -340.367
+offset_right = -45.4886
+offset_bottom = -274.367
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

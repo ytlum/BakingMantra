@@ -256,7 +256,7 @@ visible = false
 position = Vector2(320, 155)
 
 [node name="Player2" parent="." instance=ExtResource("26_xg5g8")]
-position = Vector2(-341, 387)
+position = Vector2(146, 511)
 
 [node name="obstacles" type="Node" parent="."]
 

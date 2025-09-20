@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8gl55unfdxkk" path="res://Scripts/OptionMenu.gd" id="1_fk0n0"]
 [ext_resource type="Texture2D" uid="uid://bv2ngdmk5qh5q" path="res://assets/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0014.png" id="2_w0gtr"]
-[ext_resource type="Script" path="res://Scripts/save_button.gd" id="3_7dhh8"]
+[ext_resource type="Script" uid="uid://dxh8xyq5wu2yr" path="res://Scripts/save_button.gd" id="3_7dhh8"]
 [ext_resource type="Texture2D" uid="uid://bpdspou0dhckl" path="res://assets/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0045.png" id="3_lg1ie"]
 [ext_resource type="Texture2D" uid="uid://dqrr5uuggclii" path="res://assets/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0043.png" id="4_7dhh8"]
 [ext_resource type="Texture2D" uid="uid://dkrdbufkb5qmp" path="res://assets/UI/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thick outline/tile_0044.png" id="5_67vfe"]
@@ -10,7 +10,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_xwmaf"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

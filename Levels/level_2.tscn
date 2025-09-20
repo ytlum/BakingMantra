@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://bxljq01km86pd"]
 
-[ext_resource type="Texture2D" uid="uid://durxl1l8rjfa2" path="res://assets/level2/background.png" id="1_kbe2v"]
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="3_dgq3b"]
 [ext_resource type="PackedScene" uid="uid://cv6u7jsbypgfd" path="res://Items/cocoa.tscn" id="4_dgq3b"]
 [ext_resource type="Texture2D" uid="uid://qto34xoauxyx" path="res://assets/background/fg_1.png" id="4_lmqi1"]
 [ext_resource type="Texture2D" uid="uid://bd1hkrkpsx11k" path="res://assets/level2/grass_props.png" id="5_bcgyv"]
 [ext_resource type="Texture2D" uid="uid://cg1yidv5m0bge" path="res://assets/level2/bigflowers_props.png" id="6_fbld2"]
+[ext_resource type="Script" uid="uid://dqntvt021lt5y" path="res://Scripts/camera.gd" id="7_lmqi1"]
 [ext_resource type="Texture2D" uid="uid://c6ffmrel6tq43" path="res://assets/level2/flowers_props.png" id="7_pml6m"]
 [ext_resource type="Texture2D" uid="uid://bwj0ubalckk26" path="res://assets/level2/door.png" id="8_vltsr"]
 [ext_resource type="PackedScene" uid="uid://ci62281a7ciw5" path="res://Obstacles/flying_fork_spawner.tscn" id="10_rp5ft"]
@@ -430,12 +430,6 @@ position = Vector2(1005, 292.5)
 scale = Vector2(2.28333, 3.61875)
 texture = ExtResource("4_lmqi1")
 
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(640.5, 361.5)
-scale = Vector2(5.32083, 4.50625)
-texture = ExtResource("1_kbe2v")
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(0, -1)
@@ -447,14 +441,14 @@ layer_0/tile_data = PackedInt32Array(131072, 917504, 2, 196608, 917504, 3, 26214
 [node name="Player" parent="." instance=ExtResource("3_dgq3b")]
 position = Vector2(-290, 319)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2(746.088, 47.8353)
 scale = Vector2(0.283206, -8.9227)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(0.1, 0.1)
 process_callback = 0
-position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+script = ExtResource("7_lmqi1")
 
 [node name="Cocoa" parent="." instance=ExtResource("4_dgq3b")]
 position = Vector2(189, -52)

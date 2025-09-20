@@ -13,7 +13,6 @@ script = ExtResource("1_y1bx3")
 position = Vector2(366, 244.5)
 scale = Vector2(0.130178, 0.127976)
 texture = ExtResource("2_y1bx3")
-script = ExtResource("1_y1bx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(364.5, 244.5)

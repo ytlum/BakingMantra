@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxljq01km86pd"]
+[gd_scene load_steps=17 format=3 uid="uid://bxljq01km86pd"]
 
 [ext_resource type="Texture2D" uid="uid://b8f425x4yfetp" path="res://assets/level2/tileset_32x32(new).png" id="2_arsda"]
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="3_dgq3b"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ptdgj1t38bqu" path="res://assets/background/bg_1.png" id="12_5yfph"]
 [ext_resource type="Texture2D" uid="uid://bre8kfd0xh5ri" path="res://assets/background/bg_2.png" id="13_w6yvm"]
 [ext_resource type="PackedScene" uid="uid://duo53nqelljcd" path="res://Obstacles/chocolate_lava.tscn" id="14_lmqi1"]
+[ext_resource type="PackedScene" uid="uid://cbfghflex5gm8" path="res://UI/start_menu.tscn" id="15_5yfph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bcgyv"]
 texture = ExtResource("2_arsda")
@@ -484,3 +485,11 @@ position = Vector2(1332, 434)
 
 [node name="chocolate lava" parent="obstacles" instance=ExtResource("14_lmqi1")]
 position = Vector2(1256, 569)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("15_5yfph")]
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0

@@ -38,7 +38,11 @@ func _on_return_pressed():
 	challenge_button.visible = false
 
 func _on_exit_pressed():
-	get_tree().quit()
+	# 切换到关卡选择场景
+	get_tree().paused = false  # 确保解除暂停
+	get_tree().change_scene_to_file("res://UI/levelSelector.tscn")
+
 
 func _on_challenge_pressed():
+	get_tree().paused = false
 	get_tree().reload_current_scene()

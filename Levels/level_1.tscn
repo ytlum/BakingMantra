@@ -199,7 +199,7 @@ grow_vertical = 2
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(649.5, 322)
+position = Vector2(646, 334)
 scale = Vector2(1.08417, 1)
 texture = ExtResource("1_uclwg")
 
@@ -249,7 +249,7 @@ visible = false
 position = Vector2(320, 155)
 
 [node name="Player2" parent="." instance=ExtResource("26_xg5g8")]
-position = Vector2(-341, 387)
+position = Vector2(1.99997, 59)
 
 [node name="obstacles" type="Node" parent="."]
 
@@ -265,7 +265,7 @@ position = Vector2(277, 190)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer2" instance=ExtResource("28_g50tq")]
-offset_left = 10.0
-offset_top = 6.0
-offset_right = 10.0
-offset_bottom = 6.0
+offset_left = 9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = -9.0

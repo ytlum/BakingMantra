@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmegw36m512"]
+
+[ext_resource type="Script" uid="uid://c54swyo0udxw1" path="res://Scripts/collectible.gd" id="1_y4ce1"]
+[ext_resource type="Texture2D" uid="uid://0jyepyi21ryf" path="res://assets/level1/flour.png" id="2_y4ce1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxoqb"]
+size = Vector2(41, 51)
+
+[node name="Flour" type="Area2D"]
+script = ExtResource("1_y4ce1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(365.5, 240.25)
+scale = Vector2(0.138, 0.147)
+texture = ExtResource("2_y4ce1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(365.5, 237.5)
+shape = SubResource("RectangleShape2D_vxoqb")

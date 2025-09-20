@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cv6u7jsbypgfd"]
 
-[ext_resource type="Script" uid="uid://c54swyo0udxw1" path="res://Scripts/cocoa.gd" id="1_y0k8j"]
+[ext_resource type="Script" uid="uid://c54swyo0udxw1" path="res://Scripts/collectible.gd" id="1_y0k8j"]
 [ext_resource type="Texture2D" uid="uid://dbmsob18hy7w5" path="res://assets/level2/cocoa.png" id="2_4xbra"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxoqb"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bexe156r8w3sj"]
+
+[ext_resource type="Texture2D" uid="uid://0jyepyi21ryf" path="res://assets/level1/flour.png" id="2_qpex1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opms5"]
+size = Vector2(41, 51)
+
+[node name="FrostBerry" type="Area2D"]
+position = Vector2(440, 327)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-5.5, 1.75)
+scale = Vector2(0.138, 0.147)
+texture = ExtResource("2_qpex1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, -1)
+shape = SubResource("RectangleShape2D_opms5")

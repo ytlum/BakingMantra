@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bdx884fjg0dv8"]
+[gd_scene load_steps=57 format=3 uid="uid://bdx884fjg0dv8"]
 
 [ext_resource type="Texture2D" uid="uid://b0h8d4fo373n4" path="res://assets/UI/kenney_pixel-platformer-food-expansion (1)/Tiles/tile_0000.png" id="1_5j5gb"]
 [ext_resource type="Texture2D" uid="uid://be6khhsc7m6tu" path="res://assets/level1/level1.jpeg" id="1_uclwg"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c0bee1b0ys7vr" path="res://Player/Player.tscn" id="26_xg5g8"]
 [ext_resource type="PackedScene" uid="uid://dfjk4t6ihcejd" path="res://Obstacles/vegetables_spawner.tscn" id="27_p7b0h"]
 [ext_resource type="PackedScene" uid="uid://dm1c5v3m8f0kk" path="res://Obstacles/spilled_oil.tscn" id="28_2i07x"]
+[ext_resource type="PackedScene" uid="uid://bmegw36m512" path="res://Items/flour.tscn" id="29_g50tq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfnuo"]
 texture = ExtResource("1_5j5gb")
@@ -264,3 +265,6 @@ position = Vector2(364, -48)
 
 [node name="spilled oil" parent="obstacles" instance=ExtResource("28_2i07x")]
 position = Vector2(664, 508)
+
+[node name="Flour" parent="." instance=ExtResource("29_g50tq")]
+position = Vector2(277, 190)

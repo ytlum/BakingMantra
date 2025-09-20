@@ -1329,6 +1329,7 @@ shape = SubResource("RectangleShape2D_874d3")
 position = Vector2(-226, 447)
 
 [node name="honey bee" type="CharacterBody2D" parent="Bees"]
+position = Vector2(205, -480)
 motion_mode = 1
 script = ExtResource("58_6ownd")
 
@@ -1351,6 +1352,33 @@ shape = SubResource("CapsuleShape2D_ei8qt")
 [node name="StompDetection" type="Area2D" parent="Bees/honey bee"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee/StompDetection"]
+position = Vector2(1030.5, 64.5)
+shape = SubResource("RectangleShape2D_6ownd")
+
+[node name="honey bee2" type="CharacterBody2D" parent="Bees"]
+position = Vector2(-580, -456)
+motion_mode = 1
+script = ExtResource("58_6ownd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee2"]
+position = Vector2(1030, 93)
+shape = SubResource("CapsuleShape2D_0rrql")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bees/honey bee2"]
+position = Vector2(1029, 77)
+scale = Vector2(2.39583, 2.58333)
+sprite_frames = SubResource("SpriteFrames_tkwfe")
+animation = &"death"
+
+[node name="ContactDamage" type="Area2D" parent="Bees/honey bee2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee2/ContactDamage"]
+position = Vector2(1030, 98)
+shape = SubResource("CapsuleShape2D_ei8qt")
+
+[node name="StompDetection" type="Area2D" parent="Bees/honey bee2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bees/honey bee2/StompDetection"]
 position = Vector2(1030.5, 64.5)
 shape = SubResource("RectangleShape2D_6ownd")
 
@@ -1454,5 +1482,27 @@ shape = SubResource("RectangleShape2D_sted3")
 position = Vector2(460, 256.5)
 shape = SubResource("RectangleShape2D_y54eq")
 
+[node name="Dropping platform2" type="StaticBody2D" parent="."]
+position = Vector2(546, -92)
+script = ExtResource("65_sted3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Dropping platform2"]
+position = Vector2(460, 257)
+scale = Vector2(2.07813, 2.7)
+sprite_frames = SubResource("SpriteFrames_l013c")
+animation = &"Platform"
+
+[node name="DetectionArea" type="Area2D" parent="Dropping platform2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform2/DetectionArea"]
+position = Vector2(460, 240)
+shape = SubResource("RectangleShape2D_sted3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropping platform2"]
+position = Vector2(460, 256.5)
+shape = SubResource("RectangleShape2D_y54eq")
+
 [connection signal="body_entered" from="Dropping platform/DetectionArea" to="Player" method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Dropping platform/DetectionArea" to="Player" method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="Dropping platform2/DetectionArea" to="Player" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Dropping platform2/DetectionArea" to="Player" method="_on_detection_area_body_exited"]

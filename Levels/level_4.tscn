@@ -54,7 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://0l775hfu86cu" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/chocoHalf.png" id="49_oyvt7"]
 [ext_resource type="Texture2D" uid="uid://cuvbuvrj4vks8" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/chocoHalfAlt.png" id="50_npg24"]
 [ext_resource type="Texture2D" uid="uid://baqtsmofyqbnl" path="res://assets/level4/Platformer Art Complete Pack/Candy expansion/Tiles/lollipopRed.png" id="51_o8wwk"]
-[ext_resource type="Script" path="res://Scripts/lollipop.gd" id="54_ei8qt"]
+[ext_resource type="Script" uid="uid://b45d04us0rrw1" path="res://Scripts/lollipop.gd" id="54_ei8qt"]
 [ext_resource type="Texture2D" uid="uid://cgilbpvuikgc1" path="res://Obstacles/Figure/marshmellow.png" id="54_yrhmp"]
 [ext_resource type="Script" path="res://Scripts/bouncy_marshmellow.gd" id="55_y4h4i"]
 [ext_resource type="Texture2D" uid="uid://ceuptvo84sbek" path="res://assets/level4/Enemy/S_Death.png" id="55_yrhmp"]

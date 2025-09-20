@@ -338,14 +338,10 @@ func _on_hurtbox_area_exited(area: Area2D) -> void:
 		is_slowed = false
 
 func _on_attack_hitbox_area_entered(area: Area2D) -> void:
-	# Try to get the parent (root enemy)
-	var enemy = area.get_parent()
-
-	if enemy.is_in_group("honeybee") or enemy.is_in_group("snow_cone_slime"):
-		if enemy.has_method("take_damage"):
-			enemy.take_damage(1)
-			print("Hit enemy with attack!")
-
+	if area.is_in_group("honeybee"):
+		if area.has_method("take_damage"):
+			area.take_damage(1)
+		print("Killed the honeybee!")
 
 func _on_footbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("stompable"):

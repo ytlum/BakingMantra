@@ -22,6 +22,8 @@ extends CharacterBody2D
 @export var jump_force = -600.0
 @export_range(0, 1) var decelerate_on_jump_release = 0.3
 @export var hurt_stun_time := 0.4  # seconds player is stunned after hit
+
+#Inventory
 @export var inv: Inv
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -123,15 +125,6 @@ func _physics_process(delta):
 
 	# Move the character
 	move_and_slide()
-
-func collect_item(item_name):
-	# Add item to inventory or increase count
-	if inventory.has(item_name):
-		inventory[item_name] += 1
-	else:
-		inventory[item_name] = 1
-	
-	print("Collected: ", item_name, " - Total: ", inventory[item_name])
 	
 # ========================
 # Attack Function
@@ -319,3 +312,33 @@ func _on_attack_timer_timeout() -> void:
 	attacking = false
 	print("Attack ended")
 	
+func collect_item(item_resource: InvItem):
+	print("=== PLAYER COLLECTING ITEM ===")
+	print("Item: ", item_resource.name if item_resource else "NULL")
+	print("Player has inventory: ", inv != null)
+	
+	if inv == null:
+		print("ERROR: No inventory assigned to player!")
+		return false
+	
+	# Check what's in inventory before adding
+	print("BEFORE - Inventory contents:")
+	for i in range(inv.slots.size()):
+		if inv.slots[i].item:
+			print("Slot ", i, ": ", inv.slots[i].item.name, " x", inv.slots[i].amount)
+		else:
+			print("Slot ", i, ": EMPTY")
+	
+	# Try to insert the item
+	var success = inv.insert(item_resource)
+	print("Insert success: ", success)
+	
+	# Check what's in inventory after adding
+	print("AFTER - Inventory contents:")
+	for i in range(inv.slots.size()):
+		if inv.slots[i].item:
+			print("Slot ", i, ": ", inv.slots[i].item.name, " x", inv.slots[i].amount)
+		else:
+			print("Slot ", i, ": EMPTY")
+	
+	return success

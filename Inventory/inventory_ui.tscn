@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://b7st6pl4w1kh3" path="res://Inventory/inventory-background.png" id="2_o6avf"]
 [ext_resource type="PackedScene" uid="uid://bfdmkykp42jbo" path="res://Inventory/inventory_slot.tscn" id="3_6gduq"]
 
-[node name="Inventory UI" type="Control"]
-custom_minimum_size = Vector2(85, 66)
+[node name="Inventory UI" type="Control" groups=["inventory_ui"]]
+custom_minimum_size = Vector2(143, 136)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 85.0
-offset_bottom = 66.0
+offset_right = 143.0
+offset_bottom = 136.0
 scale = Vector2(3, 3)
 script = ExtResource("1_se627")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 85.0
-offset_bottom = 66.0
+offset_right = 144.0
+offset_bottom = 138.0
 texture = ExtResource("2_o6avf")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -72,4 +72,16 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="inventory_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="inventory_slot13" parent="NinePatchRect/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="inventory_slot14" parent="NinePatchRect/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="inventory_slot15" parent="NinePatchRect/GridContainer" instance=ExtResource("3_6gduq")]
+layout_mode = 2
+
+[node name="inventory_slot16" parent="NinePatchRect/GridContainer" instance=ExtResource("3_6gduq")]
 layout_mode = 2

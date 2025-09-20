@@ -496,10 +496,10 @@ wait_time = 0.25
 one_shot = true
 
 [node name="Inventory UI" parent="." instance=ExtResource("13_p7tob")]
-offset_left = -130.489
-offset_top = -340.367
-offset_right = -45.4886
-offset_bottom = -274.367
+offset_left = -221.063
+offset_top = -540.907
+offset_right = -136.063
+offset_bottom = -474.907
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="Hurtbox" to="." method="_on_hurtbox_area_exited"]

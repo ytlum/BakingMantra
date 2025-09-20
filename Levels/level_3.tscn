@@ -285,13 +285,33 @@ position = Vector2(1592, 506)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("6_trpa2")
 
-[node name="Sprite2D40" type="Sprite2D" parent="Ground"]
-position = Vector2(1813, 696)
+[node name="Sprite2D14" type="Sprite2D" parent="Ground"]
+position = Vector2(2091.89, 695.6)
 scale = Vector2(0.873313, 0.74375)
-texture = ExtResource("6_trpa2")
+texture = ExtResource("5_oojpf")
 
-[node name="Sprite2D41" type="Sprite2D" parent="Ground"]
-position = Vector2(1925, 696)
+[node name="Sprite2D42" type="Sprite2D" parent="Ground"]
+position = Vector2(2201.89, 695.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
+[node name="Sprite2D43" type="Sprite2D" parent="Ground"]
+position = Vector2(2312.89, 695.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
+[node name="Sprite2D44" type="Sprite2D" parent="Ground"]
+position = Vector2(1759.89, 695.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
+[node name="Sprite2D45" type="Sprite2D" parent="Ground"]
+position = Vector2(1869.89, 695.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("5_oojpf")
+
+[node name="Sprite2D46" type="Sprite2D" parent="Ground"]
+position = Vector2(1980.89, 695.6)
 scale = Vector2(0.873313, 0.74375)
 texture = ExtResource("5_oojpf")
 
@@ -324,3 +344,43 @@ offset_left = -5.0
 offset_top = 0.0
 offset_right = -5.0
 offset_bottom = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 315.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 695.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 600.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 505.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 410.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D24" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 220.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D25" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 125.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")
+
+[node name="Sprite2D26" type="Sprite2D" parent="."]
+position = Vector2(2423.89, 30.6)
+scale = Vector2(0.873313, 0.74375)
+texture = ExtResource("7_4t7ew")

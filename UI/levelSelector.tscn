@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://b06gry46gcwmr"]
+
+[ext_resource type="Texture2D" uid="uid://cmvyb1urupdc0" path="res://assets/UI/levelselectorbg.png" id="1_bbdif"]
+[ext_resource type="Texture2D" uid="uid://bulj7jd5271i5" path="res://assets/UI/flying-islands-sweet-land-with-candies.png" id="2_b0b4q"]
+[ext_resource type="Texture2D" uid="uid://c6yxi6mvowl5i" path="res://assets/UI/Prinbles_Buttons_Candy-I [png svg] (v 1.0) (9_10_2023)/png/Dummy/Sqaure-Icon-Red/Idle.png" id="3_82b6w"]
+[ext_resource type="Script" path="res://Scripts/level_1.gd" id="4_rd4go"]
+[ext_resource type="Script" path="res://Scripts/level_2.gd" id="5_r4dpt"]
+[ext_resource type="Script" path="res://Scripts/level_3.gd" id="6_wnd8j"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(642, 363)
+scale = Vector2(1.02047, 1.525)
+texture = ExtResource("1_bbdif")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 249.0
+offset_right = 676.0
+offset_bottom = 482.0
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
+position = Vector2(643, 439.938)
+scale = Vector2(0.567, 0.577794)
+texture = ExtResource("2_b0b4q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D2"]
+position = Vector2(227, 544)
+scale = Vector2(1.11683, 1.07678)
+texture = ExtResource("3_82b6w")
+script = ExtResource("4_rd4go")
+
+[node name="Label2" type="Label" parent="Node2D2/Sprite2D2"]
+offset_left = -24.1756
+offset_top = -25.0748
+offset_right = 24.8244
+offset_bottom = 22.9252
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D2"]
+position = Vector2(503, 529.938)
+scale = Vector2(1.11683, 1.07678)
+texture = ExtResource("3_82b6w")
+script = ExtResource("5_r4dpt")
+
+[node name="Label3" type="Label" parent="Node2D2/Sprite2D3"]
+offset_left = -35.8157
+offset_top = -33.3754
+offset_right = 35.1843
+offset_bottom = 29.6246
+theme_override_font_sizes/font_size = 30
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D2"]
+position = Vector2(783, 548)
+scale = Vector2(1.11683, 1.07678)
+texture = ExtResource("3_82b6w")
+script = ExtResource("6_wnd8j")
+
+[node name="Label4" type="Label" parent="Node2D2/Sprite2D4"]
+offset_left = -35.8156
+offset_top = -32.5043
+offset_right = 35.1844
+offset_bottom = 28.4957
+theme_override_font_sizes/font_size = 30
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D2"]
+position = Vector2(1037, 528)
+scale = Vector2(1.11683, 1.07678)
+texture = ExtResource("3_82b6w")
+
+[node name="Label5" type="Label" parent="Node2D2/Sprite2D5"]
+offset_left = -31.3387
+offset_top = -30.6469
+offset_right = 39.6613
+offset_bottom = 30.3531
+theme_override_font_sizes/font_size = 30
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="levelselector" type="Label" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 49.0
+offset_right = 957.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 90
+text = "Level Selector"

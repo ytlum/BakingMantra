@@ -11,6 +11,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
 offset_left = 183.0
 offset_top = 1.0
 offset_right = 1123.0
@@ -18,6 +19,7 @@ offset_bottom = 789.0
 texture = ExtResource("1_kjexa")
 
 [node name="RetryButton" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 580.0
 offset_top = 362.0
 offset_right = 722.0
@@ -26,6 +28,7 @@ theme_override_font_sizes/font_size = 25
 text = "Retry"
 
 [node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 0
 offset_left = 581.0
 offset_top = 426.0
 offset_right = 719.0

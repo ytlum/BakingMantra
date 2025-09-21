@@ -323,16 +323,3 @@ position = Vector2(975, 207)
 
 [node name="Player" parent="." instance=ExtResource("13_7cdb2")]
 position = Vector2(-82, 20)
-walk_speed = 150.0
-run_speed = 350.0
-crouch_speed = 80.0
-icy_acceleration = 0.2
-stomp_bounce_force = -450.0
-attack_cooldown = 0.25
-invuln_time = 0.7
-acceleration = 0.1
-deceleration = 0.1
-jump_force = -900.0
-decelerate_on_jump_release = 0.3
-hurt_stun_time = 0.4
-max_health = 3

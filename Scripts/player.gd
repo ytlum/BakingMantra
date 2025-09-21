@@ -405,3 +405,4 @@ func _on_attack_timer_timeout() -> void:
 	attacking = false
 	print("Attack ended")
 	
+	

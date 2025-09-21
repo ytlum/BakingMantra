@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bponr1mcvgi15"]
+
+[ext_resource type="Script" uid="uid://4nvybp74705r" path="res://levelComplete.gd" id="1_0yxqm"]
+[ext_resource type="Texture2D" uid="uid://buw8l0n5htbsm" path="res://assets/UI/levelComplete.png" id="2_6ybmo"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_0yxqm")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.031
+anchor_bottom = 0.028
+offset_left = 1.0
+offset_top = -7.0
+offset_right = -18.68
+offset_bottom = -2.16
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.724
+anchor_top = -1.235
+anchor_right = -2.724
+anchor_bottom = -1.235
+offset_left = 239.48
+offset_top = 32.875
+offset_right = 1179.48
+offset_bottom = 820.875
+texture = ExtResource("2_6ybmo")
+
+[node name="LevelSelectorButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 373.0
+offset_right = 725.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 25
+text = "Next"
